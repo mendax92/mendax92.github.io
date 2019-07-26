@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="错误分析,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="1. 错误分析 java.lang.UnsupportedOperationException 大致的意思是，你调用的关于的容器的操作是不被允许的。   2. 个人理解 这不是说没有该方法，如果没有该方法的话，在编译期间就可以识别。  有该方法，也就是说该方法受到了限制。  限制就类似于权限限制之类的东西。（类似于linux 中对于文件权限的管理）。如果list不能实现这种权限的限制，那么会存在一">
+<meta name="keywords" content="错误分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UnsupportedOperationException错误分析">
+<meta property="og:url" content="http://yoursite.com/2019/07/26/UnsupportedOperationException错误分析/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 错误分析 java.lang.UnsupportedOperationException 大致的意思是，你调用的关于的容器的操作是不被允许的。   2. 个人理解 这不是说没有该方法，如果没有该方法的话，在编译期间就可以识别。  有该方法，也就是说该方法受到了限制。  限制就类似于权限限制之类的东西。（类似于linux 中对于文件权限的管理）。如果list不能实现这种权限的限制，那么会存在一">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-26T08:24:02.935Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="UnsupportedOperationException错误分析">
+<meta name="twitter:description" content="1. 错误分析 java.lang.UnsupportedOperationException 大致的意思是，你调用的关于的容器的操作是不被允许的。   2. 个人理解 这不是说没有该方法，如果没有该方法的话，在编译期间就可以识别。  有该方法，也就是说该方法受到了限制。  限制就类似于权限限制之类的东西。（类似于linux 中对于文件权限的管理）。如果list不能实现这种权限的限制，那么会存在一">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/26/UnsupportedOperationException错误分析/">
 
 
 
 
 
-  <title>Hexo</title>
+  <title>UnsupportedOperationException错误分析 | Hexo</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,9 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -276,9 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/26/UnsupportedOperationException错误分析/" itemprop="url">UnsupportedOperationException错误分析</a></h1>
+          <h1 class="post-title" itemprop="name headline">UnsupportedOperationException错误分析</h1>
         
 
         <div class="post-meta">
@@ -350,9 +352,7 @@
       
 
       
-        
-          
-            <h2 id="1-错误分析"><a href="#1-错误分析" class="headerlink" title="1. 错误分析"></a>1. 错误分析</h2><blockquote>
+        <h2 id="1-错误分析"><a href="#1-错误分析" class="headerlink" title="1. 错误分析"></a>1. 错误分析</h2><blockquote>
 <p>java.lang.UnsupportedOperationException 大致的意思是，你调用的关于的容器的操作是不被允许的。</p>
 </blockquote>
 <hr>
@@ -420,8 +420,6 @@ private static void testChangeReadOnly(){
 List newList = new ArrayList(list); 
 </code></pre>
 
-          
-        
       
     </div>
     
@@ -436,307 +434,36 @@ List newList = new ArrayList(list);
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/判断当前activity 是否在栈顶/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mendax">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/26/判断当前activity 是否在栈顶/" itemprop="url">判断当前activity 是否在栈顶</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T15:34:37+08:00">
-                2019-07-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/错误分析/" rel="tag"># 错误分析</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>通过代码<pre><code>private static final String ACTIVITY_NAME_PARENTMEETING = "com.sunnyberry.xst.activity.parentmeeting.ParentMeetingActivity";
-Utils.activityIsBackground(mContext, ACTIVITY_NAME_PARENTMEETING);
-/**
-* 判断activity是否是在栈顶
-*/
-public static boolean activityIsBackground(Context context, String clazzName) {
-ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-RunningTaskInfo info = manager.getRunningTasks(1).get(0);
-String shortClassName = info.topActivity.getShortClassName();    //类名
-String className = info.topActivity.getClassName();              //完整类名
-String packageName = info.topActivity.getPackageName();          //包名
-if (TextUtils.isEmpty(clazzName)) {
-  return false;
-}
-return (clazzName.equals(className));
-}
-</code></pre></li>
-<li>通过命令行获取当前的activity<br>adb shell dumpsys activity | findstr “mFocusedActivity”</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mendax">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/26/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T12:27:03+08:00">
-                2019-07-26
-              </time>
+              <a href="/2019/07/26/判断当前activity 是否在栈顶/" rel="next" title="判断当前activity 是否在栈顶">
+                <i class="fa fa-chevron-left"></i> 判断当前activity 是否在栈顶
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -746,10 +473,11 @@ return (clazzName.equals(className));
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -757,6 +485,10 @@ return (clazzName.equals(className));
 
 
           
+
+  
+
+
 
         </div>
         
@@ -777,8 +509,17 @@ return (clazzName.equals(className));
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -838,6 +579,22 @@ return (clazzName.equals(className));
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-错误分析"><span class="nav-number">1.</span> <span class="nav-text">1. 错误分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-个人理解"><span class="nav-number">2.</span> <span class="nav-text">2. 个人理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-举例"><span class="nav-number">3.</span> <span class="nav-text">3. 举例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Collections-unmodifiableList（-）引起的错误"><span class="nav-number">3.1.</span> <span class="nav-text">Collections.unmodifiableList（*）引起的错误</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法"><span class="nav-number">3.1.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Arrays-asLisvt-后调用add，remove这些method时出现"><span class="nav-number">3.2.</span> <span class="nav-text">使用Arrays.asLisvt()后调用add，remove这些method时出现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -971,6 +728,10 @@ return (clazzName.equals(className));
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
