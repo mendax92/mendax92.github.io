@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="准备工作(window7 64位) 下载node.js并安装（node官网下载安装），默认会安装npm  下载安装git（git官网下载安装）  下载安装hexo(hexo官方文档)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-29T01:57:03.777Z">
+<meta property="og:updated_time" content="2019-07-29T02:00:02.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo博客的搭建">
 <meta name="twitter:description" content="准备工作(window7 64位) 下载node.js并安装（node官网下载安装），默认会安装npm  下载安装git（git官网下载安装）  下载安装hexo(hexo官方文档)">
@@ -368,10 +368,36 @@
 </code></pre>
 <h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3></li>
 <li><p>下载<br></p>
-<figure class="highlight plain"><figcaption><span>git clone</span><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">themes/next</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">- 全局安装&lt;br&gt;</span><br><span class="line">``` npm install -g hexo    #-g 全局安装hexo</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>$ git clone https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre></li>
+<li><p>全局安装<br></p>
+<pre><code>npm install -g hexo    #-g 全局安装hexo
+</code></pre></li>
 <li><p>校验是否安装成功</p>
-<figure class="highlight plain"><figcaption><span>-v</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">- 生成hexo模板进入相对应的目录（我这边是D磁盘下）</span><br><span class="line">	&lt;pre&gt;&lt;code&gt;hexo init blog  #blog 我这边是直接在D盘下 创建个blog 文件夹</span><br><span class="line">	cd blog</span><br><span class="line">	npm install</span><br><span class="line">	hexo server #运行程序，访问本地localhost:4000可以看到博客已经搭建成功</span><br><span class="line">	&lt;/pre&gt;&lt;/code&gt;</span><br><span class="line">## 将博客与Github关联 ## </span><br><span class="line">- 在Github上创建名字为XXX.github.io的项目，XXX为自己的github用户名(一个账号只能创建一个githubpage，且后缀必须“.github.io”)</span><br><span class="line">- 打开本地的Blog文件夹项目内的_config.yml配置文件，将其中的type设置为git，其中repository 可为SSH地址(我这是SSH地址)</span><br><span class="line">	&lt;pre&gt;&lt;code&gt;deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repository: git@github.com:mendax92/mendax92.github.io.git</span><br><span class="line">	branch: master</span><br><span class="line">	&lt;/pre&gt;&lt;/code&gt;或者</span><br><span class="line">	&lt;pre&gt;&lt;code&gt;deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repository: https://github.com/mendax92/mendax92.github.io.git</span><br><span class="line">	branch: master</span><br><span class="line">	&lt;/pre&gt;&lt;/code&gt;</span><br><span class="line">- 配置SSH key</span><br><span class="line">	``` 为什么要配置这个呢？因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题)</span><br><span class="line">	``` </span><br><span class="line">	&lt;pre&gt;&lt;code&gt;cd ~/. ssh  #检查本机已存在的ssh密钥 如果提示：No such file or directory 说明你是第一次使用git。</span><br></pre></td></tr></table></figure>
+<pre><code>hexo -v
+</code></pre></li>
+<li><p>生成hexo模板进入相对应的目录（我这边是D磁盘下）</p>
+  <pre><code>hexo init blog  #blog 我这边是直接在D盘下 创建个blog 文件夹
+  cd blog
+  npm install
+  hexo server #运行程序，访问本地localhost:4000可以看到博客已经搭建成功
+  </code></pre>
+<h2 id="将博客与Github关联"><a href="#将博客与Github关联" class="headerlink" title="将博客与Github关联"></a>将博客与Github关联</h2></li>
+<li><p>在Github上创建名字为XXX.github.io的项目，XXX为自己的github用户名(一个账号只能创建一个githubpage，且后缀必须“.github.io”)</p>
+</li>
+<li><p>打开本地的Blog文件夹项目内的_config.yml配置文件，将其中的type设置为git，其中repository 可为SSH地址(我这是SSH地址)</p>
+  <pre><code>deploy:
+  type: git
+  repository: git@github.com:mendax92/mendax92.github.io.git
+  branch: master
+  </code></pre>或者
+  <pre><code>deploy:
+  type: git
+  repository: https://github.com/mendax92/mendax92.github.io.git
+  branch: master
+  </code></pre></li>
+<li><p>配置SSH key</p>
+  <figure class="highlight plain"><figcaption><span>key来解决本地和服务器的连接问题)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">``` </span><br><span class="line">&lt;pre&gt;&lt;code&gt;cd ~/. ssh  #检查本机已存在的ssh密钥 如果提示：No such file or directory 说明你是第一次使用git。</span><br></pre></td></tr></table></figure>
 
 <p>  ssh-keygen -t rsa -C “邮件地址”  #找到.ssh\id_rsa.pub文件，打开并复制里面的内容，-&gt;github主页，-&gt;个人设置 -&gt; SSH and GPG keys -&gt; New SSH key<br>  $ ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>  #测试是否成功<br>  $ git config –global user.name “liuxianan”// 你的github用户名，非昵称<br>  $ git config –global user.email  “<a href="mailto:xxx@qq.com" target="_blank" rel="noopener">xxx@qq.com</a>“// 填写你的github注册邮箱<br>  </p>
 </li>
@@ -568,7 +594,7 @@ hexo new page "about        #添加关于页面
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作-window7-64位"><span class="nav-number">1.</span> <span class="nav-text">准备工作(window7 64位)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node"><span class="nav-number">1.1.</span> <span class="nav-text">安装Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git"><span class="nav-number">1.2.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">1.3.</span> <span class="nav-text">安装hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新文章"><span class="nav-number">2.</span> <span class="nav-text">更新文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加页面"><span class="nav-number">3.</span> <span class="nav-text">添加页面</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作-window7-64位"><span class="nav-number">1.</span> <span class="nav-text">准备工作(window7 64位)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node"><span class="nav-number">1.1.</span> <span class="nav-text">安装Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git"><span class="nav-number">1.2.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">1.3.</span> <span class="nav-text">安装hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将博客与Github关联"><span class="nav-number">2.</span> <span class="nav-text">将博客与Github关联</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新文章"><span class="nav-number">3.</span> <span class="nav-text">更新文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加页面"><span class="nav-number">4.</span> <span class="nav-text">添加页面</span></a></li></ol></div>
             
 
           </div>
