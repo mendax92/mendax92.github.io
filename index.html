@@ -259,6 +259,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/hexo博客的搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mendax">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/26/hexo博客的搭建/" itemprop="url">hexo博客的搭建</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T16:46:12+08:00">
+                2019-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客的搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">博客的搭建</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="准备工作-window7-64位"><a href="#准备工作-window7-64位" class="headerlink" title="准备工作(window7 64位)"></a>准备工作(window7 64位)</h2><ul>
+<li>下载node.js并安装（<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">node官网</a>下载安装），默认会安装npm</li>
+<li>下载安装git（<a href="https://git-scm.com/" target="_blank" rel="noopener">git官网</a>下载安装）</li>
+<li>下载安装hexo(<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">hexo官方文档</a>)
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/26/hexo博客的搭建/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </li></ul></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/UnsupportedOperationException错误分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -351,8 +500,7 @@
 
       
         
-          
-            <h2 id="1-错误分析"><a href="#1-错误分析" class="headerlink" title="1. 错误分析"></a>1. 错误分析</h2><blockquote>
+          <h2 id="1-错误分析"><a href="#1-错误分析" class="headerlink" title="1. 错误分析"></a>1. 错误分析</h2><blockquote>
 <p>java.lang.UnsupportedOperationException 大致的意思是，你调用的关于的容器的操作是不被允许的。</p>
 </blockquote>
 <hr>
@@ -364,63 +512,13 @@
 <li>本质上，下面的错误案例，都可以归结为权限问题。 </li>
 </ol>
 <hr>
-<h2 id="3-举例"><a href="#3-举例" class="headerlink" title="3. 举例"></a>3. 举例</h2><h3 id="Collections-unmodifiableList（-）引起的错误"><a href="#Collections-unmodifiableList（-）引起的错误" class="headerlink" title="Collections.unmodifiableList（*）引起的错误"></a>Collections.unmodifiableList（*）引起的错误</h3><pre><code>Collections.unmodifiableList 起到了对list**设置权限的目的**。
-   private static void testReadOnly(){
-        //1.创建一个list。并且这个list的访问权限未进行设置。
-        List<string> modifyList = new ArrayList<>(); 
-        //2.向其中插入相关的数据。【可行】
-        modifyList.add("you");
-        modifyList.add("are");
-        modifyList.add("boy");
-        //3.对list进行设置。使之可读。
-        modifyList = Collections.unmodifiableList(modifyList);
-        //4.在次插入，出现错误。
-        modifyList.add("hello");
-    }
-</string></code></pre>
-
-<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><ol>
-<li><p>该只读的权限维护的是，修改list中引用的权限。 </p>
-</li>
-<li><p>但是如果你如果不改引用，是可以通过引用来更改其所指向的对象的。</p>
-<pre><code>
-private static void testChangeReadOnly(){
-     ////1.创建2个list。并且这2个list的访问权限未进行设置。
-     List<stringbuilder> modifyList = new ArrayList<>(); 
-     List<stringbuilder> normalList= new LinkedList<>();
-     //2.向modifylist中插入元素。
-     modifyList.add(new StringBuilder("you"));
-     modifyList.add(new StringBuilder("are"));
-     modifyList.add(new StringBuilder("boy"));
-     //3.设置可读权限
-     modifyList = Collections.unmodifiableList(modifyList);
-     //4.将只读的modifyList中的引用复制到normalList中。
-     normalList.addAll(modifyList);
-     //5.向normalList中插入数据。
-     normalList.add(new StringBuilder("hello"));
-     System.out.println(normalList.toString());//[you, are, boy, hello]
-
-     //6.更改只读list中，引用所指向的对象的值。
-     System.out.println("更改之前 ----> " + modifyList.toString());//更改之前 ----> [you, are, boy]
-     //更改
-     modifyList.get(1).append("~~~~~");
-     System.out.println("更改之后 ----> " + modifyList.toString());//更改之后 ----> [you, are~~~~~, boy]
- } 
-</stringbuilder></stringbuilder></code></pre><pre><code>输出结果：
-<p>[you, are, boy, hello]<br>更改之前 —-&gt; [you, are, boy]<br>更改之后 —-&gt; [you, are<del>~</del>, boy]<br></p></code></pre><p></p>
-<h3 id="使用Arrays-asLisvt-后调用add，remove这些method时出现"><a href="#使用Arrays-asLisvt-后调用add，remove这些method时出现" class="headerlink" title="使用Arrays.asLisvt()后调用add，remove这些method时出现"></a>使用Arrays.asLisvt()后调用add，remove这些method时出现</h3><blockquote>
-<p>Arrays.asLisvt() 返回java.util.ArraysArrayList，而不是ArrayList。</p>
-<p>ArraysArrayList和ArrayList都是继承AbstractList，remove，add等method在AbstractList中是默认throw   UnsupportedOperationException而且不作任何操作。</p>
-<p>ArrayList override这些method来对list进行操作，但是Arrays$ArrayList没有override remove(int)，add(int)等，所以throw UnsupportedOperationException</p>
-</blockquote>
-</li>
-</ol>
-<h4 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h4><p>和上面异常的处理一样，将引用操作转移到其他地方。</p>
-<pre><code>List list = Arrays.asList(fixArray[]);
-List newList = new ArrayList(list); 
-</code></pre>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/26/UnsupportedOperationException错误分析/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -559,29 +657,14 @@ List newList = new ArrayList(list);
 
       
         
-          
-            <ol>
-<li>通过代码<pre><code>private static final String ACTIVITY_NAME_PARENTMEETING = "com.sunnyberry.xst.activity.parentmeeting.ParentMeetingActivity";
-Utils.activityIsBackground(mContext, ACTIVITY_NAME_PARENTMEETING);
-/**
-* 判断activity是否是在栈顶
-*/
-public static boolean activityIsBackground(Context context, String clazzName) {
-ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-RunningTaskInfo info = manager.getRunningTasks(1).get(0);
-String shortClassName = info.topActivity.getShortClassName();    //类名
-String className = info.topActivity.getClassName();              //完整类名
-String packageName = info.topActivity.getPackageName();          //包名
-if (TextUtils.isEmpty(clazzName)) {
-  return false;
-}
-return (clazzName.equals(className));
-}
-</code></pre></li>
-<li>通过命令行获取当前的activity<br>adb shell dumpsys activity | findstr “mFocusedActivity”</li>
-</ol>
-
-          
+          <h2 id="判断当前activity-是否在栈顶的两种方法"><a href="#判断当前activity-是否在栈顶的两种方法" class="headerlink" title="判断当前activity 是否在栈顶的两种方法"></a>判断当前activity 是否在栈顶的两种方法</h2>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/26/判断当前activity 是否在栈顶/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -793,7 +876,7 @@ return (clazzName.equals(className));
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -804,7 +887,7 @@ return (clazzName.equals(className));
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -815,7 +898,7 @@ return (clazzName.equals(className));
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
