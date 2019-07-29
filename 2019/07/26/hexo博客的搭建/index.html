@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="准备工作(window7 64位) 下载node.js并安装（node官网下载安装），默认会安装npm  下载安装git（git官网下载安装）  下载安装hexo(hexo官方文档)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-29T02:07:10.546Z">
+<meta property="og:updated_time" content="2019-07-29T02:12:15.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo博客的搭建">
 <meta name="twitter:description" content="准备工作(window7 64位) 下载node.js并安装（node官网下载安装），默认会安装npm  下载安装git（git官网下载安装）  下载安装hexo(hexo官方文档)">
@@ -367,20 +367,23 @@
 <pre><code> git version
 </code></pre>
 <h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3></li>
-<li><p>下载<br></p>
+<li><p>下载</p>
 <pre><code>$ git clone https://github.com/iissnan/hexo-theme-next themes/next
-</code></pre></li>
-<li><p>全局安装<br></p>
+</code></pre>
+</li>
+<li><p>全局安装</p>
 <pre><code>npm install -g hexo    #-g 全局安装hexo
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>校验是否安装成功</p>
 <pre><code>hexo -v
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>生成hexo模板进入相对应的目录（我这边是D磁盘下）</p>
   <pre><code>hexo init blog  #blog 我这边是直接在D盘下 创建个blog 文件夹
-  cd blog
-  npm install
-  hexo server #运行程序，访问本地localhost:4000可以看到博客已经搭建成功
+cd blog
+npm install
+hexo server #运行程序，访问本地localhost:4000可以看到博客已经搭建成功
   </code></pre>
 <h2 id="将博客与Github关联"><a href="#将博客与Github关联" class="headerlink" title="将博客与Github关联"></a>将博客与Github关联</h2></li>
 <li><p>在Github上创建名字为XXX.github.io的项目，XXX为自己的github用户名(一个账号只能创建一个githubpage，且后缀必须“.github.io”)</p>
