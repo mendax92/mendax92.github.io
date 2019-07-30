@@ -355,6 +355,172 @@ border-left-color: #1E92FB;    /*左边框颜色*/
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.simcom.ltd/2019/07/30/Activity启动过程中获取组件宽高的五种方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mendax">
+      <meta itemprop="description" content="没有生而知之，只有学而知之">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mendax's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/30/Activity启动过程中获取组件宽高的五种方式/" class="post-title-link" itemprop="url">Activity启动过程中获取组件宽高的五种方式</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-30 11:57:39 / 修改时间：14:45:17" itemprop="dateCreated datePublished" datetime="2019-07-30T11:57:39+08:00">2019-07-30</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="问题：在Activity的启动流程中通过getWidht和getHeight方法获取组件的宽度和高度"><a href="#问题：在Activity的启动流程中通过getWidht和getHeight方法获取组件的宽度和高度" class="headerlink" title="问题：在Activity的启动流程中通过getWidht和getHeight方法获取组件的宽度和高度"></a>问题：在Activity的启动流程中通过getWidht和getHeight方法获取组件的宽度和高度</h2><pre><code>//在onCreate方法中调用，用于获取TextView的宽度和高度
+private void getTextHeightAndWidth() {
+    // 我们定义的用于获取宽度和高度的组件
+    titleText = (TextView) findViewById(R.id.text_title);
+    int height = titleText.getHeight();
+    int width = titleText.getWidth();
+    Log.i(TAG, "height:" + height + "  " + "width:" + width);
+}
+</code></pre>
+<h3 id="打印结果"><a href="#打印结果" class="headerlink" title="打印结果"></a>打印结果</h3><pre><code>I/MainActivity: height:0  width:0
+</code></pre>
+<p>咦？为什么打印的height和width都是0呢？我们在执行一遍呢？结果还是一样的，两个变量都是0，难道这段代码不能再onCreate方法中调用，那么我们试试在onResume方法中调用呢？<br><br>只能说然并卵，打印的结果依然是：</p>
+<pre><code>I/MainActivity: height:0  width:0
+</code></pre>
+<p>好吧，问题已经出来了，看样子我们是不能再onCreate方法或者是onResume方法中调用该方法获取组件的宽高的，但是这是为什么呢？<br>平时我们都是通过这个方法来获取组件的宽高的，并且也没问题啊，比如我们将这个方法的调用逻辑写在按钮的点击事件之内呢？我们再来试试。</p>
+<pre><code>//这里的button1是我们定义的Button组件，并且我们重写了Button的点击事件，在其中调用了获取组件宽高的方法
+button1 = (Button) findViewById(R.id.button1);
+button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getTextHeightAndWidth();
+            }
+});
+</code></pre>
+<p>这样敲完代码之后，我们执行这段代码，界面入下图所示：<br><img src="images/2019-07-30115739.jpg" alt="avatar"></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.simcom.ltd/2019/07/26/hexo博客的搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -922,7 +1088,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
