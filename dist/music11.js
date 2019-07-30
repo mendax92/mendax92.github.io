@@ -4,20 +4,20 @@ const ap = new APlayer({
     autoplay: false,
     audio: [
       {
-        name: "PDD���֮��",
-        artist: '����Բ',
+        name: "A39868.mp3",
+        artist: 'A39868',
         url: 'http://up.mcyt.net/?down/39868.mp3',
         cover: 'http://oeff2vktt.bkt.clouddn.com/image/84.jpg',
       },
       {
-        name: '9420',
-        artist: '��С��',
+        name: 'B45967.mp3',
+        artist: 'B45967',
         url: 'http://up.mcyt.net/?down/45967.mp3',
         cover: 'http://oeff2vktt.bkt.clouddn.com/image/8.jpg',
       },
       {
-        name: '������',
-        artist: '������',
+        name: 'C46644.mp3',
+        artist: 'C46644',
         url: 'http://up.mcyt.net/?down/46644.mp3',
         cover: 'http://oeff2vktt.bkt.clouddn.com/image/96.jpg',
       }
