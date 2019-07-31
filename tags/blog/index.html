@@ -106,10 +106,10 @@ border-left-color: #1E92FB;    /*左边框颜色*/
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     search: {
       root: '/',
-      path: ''
+      path: 'search.xml'
     },
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -314,11 +314,38 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 
       
       
+        <li class="menu-item menu-item-search">
+          <a href="javascript:;" class="popup-trigger">
+          
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
     </ul>
   
 
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -372,6 +399,32 @@ border-left-color: #1E92FB;    /*左边框颜色*/
         <h1>blog<small>标签</small>
         </h1>
       </div>
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2019/07/31/Hexo增加搜索功能/" itemprop="url">
+            
+              <span itemprop="name">Hexo增加搜索功能</span>
+            
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-07-31T09:46:34+08:00" content="2019-07-31">
+          07-31
+        </time>
+      </div>
+
+    </header>
+  </article>
+
 
       
         
@@ -477,7 +530,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -788,6 +841,9 @@ show_date_time();
 
 
 
+
+
+  <script src="/js/local-search.js?v=7.2.0"></script>
 
 
 

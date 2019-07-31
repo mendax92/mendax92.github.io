@@ -106,10 +106,10 @@ border-left-color: #1E92FB;    /*左边框颜色*/
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     search: {
       root: '/',
-      path: ''
+      path: 'search.xml'
     },
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -122,7 +122,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 </script>
 
   <meta name="description" content="准备工作(window7 64位) 下载node.js并安装（node官网下载安装），默认会安装npm  下载安装git（git官网下载安装）  下载安装hexo(hexo官方文档)">
-<meta name="keywords" content="hexo,blog">
+<meta name="keywords" content="blog,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo博客的搭建">
 <meta property="og:url" content="http://blog.simcom.ltd/2019/07/26/hexo博客的搭建/index.html">
@@ -316,11 +316,38 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 
       
       
+        <li class="menu-item menu-item-search">
+          <a href="javascript:;" class="popup-trigger">
+          
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
     </ul>
   
 
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -579,9 +606,9 @@ hexo new page "about        #添加关于页面
         
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
             <a href="/tags/blog/" rel="tag"># blog</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
         </div>
       
@@ -676,7 +703,7 @@ hexo new page "about        #添加关于页面
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1008,6 +1035,9 @@ show_date_time();
 
 
 
+
+
+  <script src="/js/local-search.js?v=7.2.0"></script>
 
 
 
