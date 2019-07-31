@@ -129,7 +129,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 <meta property="og:site_name" content="Mendax&#39;s Blog">
 <meta property="og:description" content="安装插件在博客的根目录执行以下命令 npm install gulp --save  安装功能模块介绍(我压缩图片用不上，我的图片全部上传github)  gulp-htmlclean       // 清理html gulp-htmlmin         // 压缩html gulp-minify-css      // 压缩css gulp-uglify          // 混淆js g">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-31T02:38:48.258Z">
+<meta property="og:updated_time" content="2019-07-31T02:41:56.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用gulp4对Hexo博客压缩">
 <meta name="twitter:description" content="安装插件在博客的根目录执行以下命令 npm install gulp --save  安装功能模块介绍(我压缩图片用不上，我的图片全部上传github)  gulp-htmlclean       // 清理html gulp-htmlmin         // 压缩html gulp-minify-css      // 压缩css gulp-uglify          // 混淆js g">
@@ -426,7 +426,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
                 
               
 
-              <time title="创建时间：2019-07-31 10:27:41 / 修改时间：10:38:48" itemprop="dateCreated datePublished" datetime="2019-07-31T10:27:41+08:00">2019-07-31</time>
+              <time title="创建时间：2019-07-31 10:27:41 / 修改时间：10:41:56" itemprop="dateCreated datePublished" datetime="2019-07-31T10:27:41+08:00">2019-07-31</time>
             </span>
           
 
@@ -486,21 +486,53 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 </code></pre> 
 <a id="more"></a>
 <h2 id="gulp配置"><a href="#gulp配置" class="headerlink" title="gulp配置"></a>gulp配置</h2>在根目录下创建gulpfile.js文件<pre><code>var gulp = require('gulp');
-
-</code></pre></li>
-</ul>
-<p>//Plugins模块获取<br>var minifycss = require(‘gulp-minify-css’);<br>var uglify = require(‘gulp-uglify’);<br>var htmlmin = require(‘gulp-htmlmin’);<br>var htmlclean = require(‘gulp-htmlclean’);</p>
-<p>//压缩css<br>gulp.task(‘minify-css’, function () {<br>return gulp.src(‘./public/<em>*/</em>.css’)<br>.pipe(minifycss())<br>.pipe(gulp.dest(‘./public’));<br>});</p>
-<p>//压缩html<br>gulp.task(‘minify-html’, function () {<br>return gulp.src(‘./public/<em>*/</em>.html’)<br>.pipe(htmlclean())<br>.pipe(htmlmin({<br>removeComments: true,<br>minifyJS: true,<br>minifyCSS: true,<br>minifyURLs: true,<br>}))</p>
-<p>.pipe(gulp.dest(‘./public’))<br>});</p>
-<p>//压缩js 不压缩min.js<br>gulp.task(‘minify-js’, function () {<br>return gulp.src([‘./public/<strong>/*.js’, ‘!./public/</strong>/*.min.js’])<br>.pipe(uglify())<br>.pipe(gulp.dest(‘./public’));<br>});</p>
-<p>//4.0以前的写法<br>//gulp.task(‘default’, [<br>  //  ‘minify-html’, ‘minify-css’, ‘minify-js’<br>//]);<br>//4.0以后的写法<br>// 执行 gulp 命令时执行的任务<br>gulp.task(‘build’, gulp.parallel(‘minify-html’, ‘minify-css’, ‘minify-js’, function() {<br>  // Do something after a, b, and c are finished.<br>}));<br></p>
+//Plugins模块获取
+var minifycss = require('gulp-minify-css');
+var uglify = require('gulp-uglify');
+var htmlmin = require('gulp-htmlmin');
+var htmlclean = require('gulp-htmlclean');
+//压缩css
+gulp.task('minify-css', function () {
+return gulp.src('./public/**/*.css')
+.pipe(minifycss())
+.pipe(gulp.dest('./public'));
+});
+//压缩html
+gulp.task('minify-html', function () {
+return gulp.src('./public/**/*.html')
+.pipe(htmlclean())
+.pipe(htmlmin({
+removeComments: true,
+minifyJS: true,
+minifyCSS: true,
+minifyURLs: true,
+}))
+.pipe(gulp.dest('./public'))
+});
+//压缩js 不压缩min.js
+gulp.task('minify-js', function () {
+return gulp.src(['./public/**/*.js', '!./public/**/*.min.js'])
+.pipe(uglify())
+.pipe(gulp.dest('./public'));
+});
+//4.0以前的写法 
+//gulp.task('default', [
+//  'minify-html', 'minify-css', 'minify-js'
+//]);
+//4.0以后的写法
+// 执行 gulp 命令时执行的任务
+gulp.task('build', gulp.parallel('minify-html', 'minify-css', 'minify-js', function() {
+// Do something after a, b, and c are finished.
+}));
+</code></pre>
 <h2 id="执行压缩"><a href="#执行压缩" class="headerlink" title="执行压缩"></a>执行压缩</h2><pre><code>hexo clean
 hexo g
 gulp  // 执行压缩，两条命令可以合并：hexo g && gulp
 hexo d //执行部署命令
 </code></pre>
 
+</li>
+</ul>
 
       
     </div>
