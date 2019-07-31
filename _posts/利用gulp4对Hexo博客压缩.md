@@ -3,7 +3,7 @@ title: 利用gulp4对Hexo博客压缩
 tags:
   - blog
   - hexo
-  - 网站优化
+  - seo
 translate_title: compress-hexo-blog-with-gulp4
 date: 2019-07-31 10:27:41
 ---
