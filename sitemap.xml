@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.simcom.ltd/about/index.html</loc>
+    
+    <lastmod>2019-07-31T10:32:18.936Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.simcom.ltd/20190731/hexo-link-seo-optimization.html</loc>
     
     <lastmod>2019-07-31T09:56:19.620Z</lastmod>
@@ -73,13 +80,6 @@
   
   <url>
     <loc>http://blog.simcom.ltd/categories/index.html</loc>
-    
-    <lastmod>2019-07-31T09:28:50.913Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.simcom.ltd/about/index.html</loc>
     
     <lastmod>2019-07-31T09:28:50.913Z</lastmod>
     
