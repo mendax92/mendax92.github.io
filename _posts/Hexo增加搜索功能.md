@@ -5,10 +5,11 @@ tags:
 - blog
 - hexo
 ---
-## 安装搜索插件 ##
+## 安装插件 ##
 在博客的根目录执行以下命令
 <pre><code>npm install hexo-generator-searchdb --save
 </pre></code>
+<!--more-->
 ## 全局配置文件_config.yml ##
 <pre><code>search:
   path: search.xml

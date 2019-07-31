@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[利用gulp4对Hexo博客压缩]]></title>
+    <url>%2F2019%2F07%2F31%2F%E5%88%A9%E7%94%A8gulp4%E5%AF%B9Hexo%E5%8D%9A%E5%AE%A2%E5%8E%8B%E7%BC%A9%2F</url>
+    <content type="text"><![CDATA[安装插件在博客的根目录执行以下命令 npm install gulp --save 安装功能模块介绍(我压缩图片用不上，我的图片全部上传github) gulp-htmlclean // 清理html gulp-htmlmin // 压缩html gulp-minify-css // 压缩css gulp-uglify // 混淆js gulp-imagemin // 压缩图片npm install gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify gulp-imagemin --save gulp配置在根目录下创建gulpfile.js文件var gulp = require('gulp'); //Plugins模块获取var minifycss = require(‘gulp-minify-css’);var uglify = require(‘gulp-uglify’);var htmlmin = require(‘gulp-htmlmin’);var htmlclean = require(‘gulp-htmlclean’); //压缩cssgulp.task(‘minify-css’, function () {return gulp.src(‘./public/*/.css’).pipe(minifycss()).pipe(gulp.dest(‘./public’));}); //压缩htmlgulp.task(‘minify-html’, function () {return gulp.src(‘./public/*/.html’).pipe(htmlclean()).pipe(htmlmin({removeComments: true,minifyJS: true,minifyCSS: true,minifyURLs: true,})) .pipe(gulp.dest(‘./public’))}); //压缩js 不压缩min.jsgulp.task(‘minify-js’, function () {return gulp.src([‘./public//*.js’, ‘!./public//*.min.js’]).pipe(uglify()).pipe(gulp.dest(‘./public’));}); //4.0以前的写法//gulp.task(‘default’, [ // ‘minify-html’, ‘minify-css’, ‘minify-js’//]);//4.0以后的写法// 执行 gulp 命令时执行的任务gulp.task(‘build’, gulp.parallel(‘minify-html’, ‘minify-css’, ‘minify-js’, function() { // Do something after a, b, and c are finished.})); 执行压缩hexo clean hexo g gulp // 执行压缩，两条命令可以合并：hexo g && gulp hexo d //执行部署命令]]></content>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+        <tag>网站优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo增加搜索功能]]></title>
     <url>%2F2019%2F07%2F31%2FHexo%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%2F</url>
-    <content type="text"><![CDATA[安装搜索插件在博客的根目录执行以下命令 npm install hexo-generator-searchdb --save 全局配置文件_config.ymlsearch: path: search.xml field: post format: html limit: 10000 hexo主题配置文件# Local search # Dependencies: https://github.com/flashlab/hexo-generator-search local_search: enable: true]]></content>
+    <content type="text"><![CDATA[安装插件在博客的根目录执行以下命令 npm install hexo-generator-searchdb --save 全局配置文件_config.ymlsearch: path: search.xml field: post format: html limit: 10000 hexo主题配置文件# Local search # Dependencies: https://github.com/flashlab/hexo-generator-search local_search: enable: true]]></content>
       <tags>
         <tag>blog</tag>
         <tag>hexo</tag>
