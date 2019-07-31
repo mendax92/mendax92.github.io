@@ -427,7 +427,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
                 
               
 
-              <time title="创建时间：2019-07-31 17:33:01 / 修改时间：17:52:48" itemprop="dateCreated datePublished" datetime="2019-07-31T17:33:01+08:00">2019-07-31</time>
+              <time title="创建时间：2019-07-31 17:33:01 / 修改时间：17:54:28" itemprop="dateCreated datePublished" datetime="2019-07-31T17:33:01+08:00">2019-07-31</time>
             </span>
           
 
@@ -467,62 +467,16 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 
       
         
+          <h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>hexo 生成文章的默认链接是“<a href="https://blog.simcom.ltd/2019/01/14/">https://blog.simcom.ltd/2019/01/14/</a><markdown file name>”,如果文章标题是英文的还好，如果是中文的，看着就各种别扭，而且这样也不利于seo优化。以下内容是讲如何做链接的seo优化.</markdown></p>
+          <!--noindex-->
           
-            <h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>hexo 生成文章的默认链接是“<a href="https://blog.simcom.ltd/2019/01/14/">https://blog.simcom.ltd/2019/01/14/</a><markdown file name>”,如果文章标题是英文的还好，如果是中文的，看着就各种别扭，而且这样也不利于seo优化。以下内容是讲如何做链接的seo优化.</markdown></p>
-<h2 id="优化方法"><a href="#优化方法" class="headerlink" title="优化方法"></a>优化方法</h2><ul>
-<li>添加urlname属性(手动)</li>
-<li>hexo插件法(<a href="https://hexo.io/plugins/index.html" target="_blank" rel="noopener">hexo插件官网</a>)<ul>
-<li>hexo-translate-title: Translate the chinese title of Hexo blog to english words automatially</li>
-<li>hexo-permalink-pinyin: A Hexo plugin which convert Chinese title to transliterate permalink.</li>
-<li>hexo-abbrlink: Auto create one and only link for every post for hexo</li>
-<li>hexo-number-title: The hexo blog post url is displayed as a number.</li>
-</ul>
-</li>
-</ul>
-<h3 id="添加urlname属性"><a href="#添加urlname属性" class="headerlink" title="添加urlname属性"></a>添加urlname属性</h3><p>在md文件的Front-matter区域新增urlname属性，可以是文章的英文Title也可以是其它自定义标识，所以每次编写Markdown你都得这么做，参考如下</p>
-<pre><code>---
-title: hexo链接SEO优化
-urlname: Hexo link SEO optimization
-date: 2019-1-14 
-categories: hexo
-author: mendax
-tags: hexo
-cover_picture: http://xxx.xx/xxx.jpg
-top: 1
----
-</code></pre>
-
-<h3 id="利用hexo插件"><a href="#利用hexo插件" class="headerlink" title="利用hexo插件"></a>利用hexo插件</h3><p>大概看了下，这些插件其实主要还是两个方法的是实现地址的唯一性</p>
-<ul>
-<li>生成唯一的值当作链接的地址</li>
-<li>通过翻译的方式生成英文的地址</li>
-</ul>
-<p>我这里选择的是hexo-translate-title</p>
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><pre><code>npm install hexo-translate-title --save
-</code></pre>
-<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>修改hexo根项目下的_config.yml</p>
-<pre><code>translate_title:
-  translate_way: google  # google,youdao,baidu_with_appid,baidu_no_appid
-  is_need_proxy: false     # true | false
-  # proxy_url: http://localhost:50018 # Your proxy_url
-  # youdao_api_key: '' # Your youdao_api_key
-  # youdao_keyfrom: xxxx-blog # Your youdao_keyfrom
-  # baidu_appid: '' # Your baidu_appid
-  # baidu_appkey: '' # Your baidu_appkey
-</code></pre>
-<pre><code>#修改原链接格式：permalink: :year/:month/:day/:title/
-permalink: :year:month:day/:translate_title.html
-</code></pre>
-<h4 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h4><pre><code>hexo clean
-hexo g
-gulp  // 执行压缩，两条命令可以合并：hexo g && gulp
-hexo d //执行部署命令
-</code></pre>
-
-
-
-
+            <div class="post-button text-center">
+              <a class="btn" href="/20190731/hexo-link-seo-optimization.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
     </div>
