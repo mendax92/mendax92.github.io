@@ -130,7 +130,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 <meta property="og:description" content="问题：在Activity的启动流程中通过getWidht和getHeight方法获取组件的宽度和高度//在onCreate方法中调用，用于获取TextView的宽度和高度 private void getTextHeightAndWidth() {     // 我们定义的用于获取宽度和高度的组件     titleText = (TextView) findViewById(R.id.text_">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/mendax92/pic/master/blog/2019-07-30/2019-07-30115739.png">
-<meta property="og:updated_time" content="2019-07-31T01:18:07.074Z">
+<meta property="og:updated_time" content="2019-07-31T01:28:24.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Activity启动过程中获取组件宽高的五种方式">
 <meta name="twitter:description" content="问题：在Activity的启动流程中通过getWidht和getHeight方法获取组件的宽度和高度//在onCreate方法中调用，用于获取TextView的宽度和高度 private void getTextHeightAndWidth() {     // 我们定义的用于获取宽度和高度的组件     titleText = (TextView) findViewById(R.id.text_">
@@ -416,7 +416,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-31 09:18:07" itemprop="dateModified" datetime="2019-07-31T09:18:07+08:00">2019-07-31</time>
+                <time title="修改时间：2019-07-31 09:28:24" itemprop="dateModified" datetime="2019-07-31T09:28:24+08:00">2019-07-31</time>
               </span>
             
           
@@ -484,9 +484,10 @@ private void getTextHeightAndWidth() {
 </code></pre>
 <h3 id="打印结果"><a href="#打印结果" class="headerlink" title="打印结果"></a>打印结果</h3><pre><code>I/MainActivity: height:0  width:0
 </code></pre>
-<p>咦？为什么打印的height和width都是0呢？我们在执行一遍呢？结果还是一样的，两个变量都是0，难道这段代码不能再onCreate方法中调用，那么我们试试在onResume方法中调用呢？<br><br>只能说然并卵，打印的结果依然是：</p>
-<pre><code>I/MainActivity: height:0  width:0</code></pre>
+<p>咦？为什么打印的height和width都是0呢？我们在执行一遍呢？结果还是一样的，两个变量都是0，难道这段代码不能再onCreate方法中调用，那么我们试试在onResume方法中调用呢？<br></p>
 <a id="more"></a>
+<p>只能说然并卵，打印的结果依然是：</p>
+<pre><code>I/MainActivity: height:0  width:0</code></pre>
 <p>好吧，问题已经出来了，看样子我们是不能再onCreate方法或者是onResume方法中调用该方法获取组件的宽高的，但是这是为什么呢？<br>平时我们都是通过这个方法来获取组件的宽高的，并且也没问题啊，比如我们将这个方法的调用逻辑写在按钮的点击事件之内呢？我们再来试试。</p>
 <pre><code>//这里的button1是我们定义的Button组件，并且我们重写了Button的点击事件，在其中调用了获取组件宽高的方法
 button1 = (Button) findViewById(R.id.button1);

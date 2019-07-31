@@ -20,9 +20,9 @@ private void getTextHeightAndWidth() {
 <pre><code>I/MainActivity: height:0  width:0
 </pre></code>
 咦？为什么打印的height和width都是0呢？我们在执行一遍呢？结果还是一样的，两个变量都是0，难道这段代码不能再onCreate方法中调用，那么我们试试在onResume方法中调用呢？</br>
+<!--more-->
 只能说然并卵，打印的结果依然是：
 <pre><code>I/MainActivity: height:0  width:0</pre></code>
-<!--more-->
 好吧，问题已经出来了，看样子我们是不能再onCreate方法或者是onResume方法中调用该方法获取组件的宽高的，但是这是为什么呢？</br>平时我们都是通过这个方法来获取组件的宽高的，并且也没问题啊，比如我们将这个方法的调用逻辑写在按钮的点击事件之内呢？我们再来试试。
 <pre><code>//这里的button1是我们定义的Button组件，并且我们重写了Button的点击事件，在其中调用了获取组件宽高的方法
 button1 = (Button) findViewById(R.id.button1);
