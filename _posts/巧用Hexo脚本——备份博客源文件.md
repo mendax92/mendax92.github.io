@@ -1,9 +1,10 @@
 ---
 title: 巧用Hexo脚本——备份博客源文件
-date: 2019-07-31 09:14:41
 tags:
-- hexo
-- blog
+  - hexo
+  - blog
+translate_title: use-hexo-scripts-backup-blog-source-files
+date: 2019-07-31 09:14:41
 ---
 ## Hexo脚本 ##
   Hexo命令会自动触发一些事件，利用这些事件，我们可以为不同的Hexo命令添加一些额外的自定义功能。我们只需要在Hexo根目录下添加一个scripts文件夹，然后将我们编写的脚本文件放在这个文件夹中，当某一事件被触发时，接收相应事件的脚本就会被自动执行。

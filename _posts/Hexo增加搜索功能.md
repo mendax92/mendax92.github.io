@@ -1,9 +1,10 @@
 ---
 title: Hexo增加搜索功能
-date: 2019-07-31 09:46:34
 tags:
-- blog
-- hexo
+  - blog
+  - hexo
+translate_title: hexo-increases-search-function
+date: 2019-07-31 09:46:34
 ---
 ## 安装插件 ##
 在博客的根目录执行以下命令

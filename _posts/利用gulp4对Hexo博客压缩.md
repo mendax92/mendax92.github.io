@@ -1,10 +1,11 @@
 ---
 title: 利用gulp4对Hexo博客压缩
-date: 2019-07-31 10:27:41
 tags:
-- blog
-- hexo
-- 网站优化
+  - blog
+  - hexo
+  - 网站优化
+translate_title: compress-hexo-blog-with-gulp4
+date: 2019-07-31 10:27:41
 ---
 ## 安装插件 ##
 在博客的根目录执行以下命令

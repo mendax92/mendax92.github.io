@@ -121,18 +121,18 @@ border-left-color: #1E92FB;    /*左边框颜色*/
   };
 </script>
 
-  <meta name="description" content="1. 错误分析 java.lang.UnsupportedOperationException 大致的意思是，你调用的关于的容器的操作是不被允许的。">
-<meta name="keywords" content="错误分析,Android">
+  <meta name="description" content="安装插件在博客的根目录执行以下命令 npm install hexo-generator-searchdb --save">
+<meta name="keywords" content="blog,hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UnsupportedOperationException错误分析">
-<meta property="og:url" content="http://blog.simcom.ltd/undefined/UnsupportedOperationException错误分析/index.html">
+<meta property="og:title" content="Hexo增加搜索功能">
+<meta property="og:url" content="http://blog.simcom.ltd/20190731/hexo-increases-search-function.html">
 <meta property="og:site_name" content="Mendax&#39;s Blog">
-<meta property="og:description" content="1. 错误分析 java.lang.UnsupportedOperationException 大致的意思是，你调用的关于的容器的操作是不被允许的。">
+<meta property="og:description" content="安装插件在博客的根目录执行以下命令 npm install hexo-generator-searchdb --save">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-31T01:25:16.545Z">
+<meta property="og:updated_time" content="2019-07-31T01:53:04.901Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UnsupportedOperationException错误分析">
-<meta name="twitter:description" content="1. 错误分析 java.lang.UnsupportedOperationException 大致的意思是，你调用的关于的容器的操作是不被允许的。">
+<meta name="twitter:title" content="Hexo增加搜索功能">
+<meta name="twitter:description" content="安装插件在博客的根目录执行以下命令 npm install hexo-generator-searchdb --save">
 
 
 
@@ -140,7 +140,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 
   
   
-  <link rel="canonical" href="http://blog.simcom.ltd/undefined/UnsupportedOperationException错误分析/">
+  <link rel="canonical" href="http://blog.simcom.ltd/20190731/hexo-increases-search-function">
 
 
 
@@ -151,7 +151,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 </script>
 
   
-  <title>UnsupportedOperationException错误分析 | Mendax's Blog</title>
+  <title>Hexo增加搜索功能 | Mendax's Blog</title>
   
 
 
@@ -383,7 +383,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.simcom.ltd/undefined/UnsupportedOperationException错误分析/">
+    <link itemprop="mainEntityOfPage" href="http://blog.simcom.ltd/20190731/hexo-increases-search-function.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mendax">
@@ -400,7 +400,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 
         
         
-          <h1 class="post-title" itemprop="name headline">UnsupportedOperationException错误分析
+          <h1 class="post-title" itemprop="name headline">Hexo增加搜索功能
 
               
             
@@ -426,7 +426,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
                 
               
 
-              <time title="创建时间：2019-07-26 16:10:51" itemprop="dateCreated datePublished" datetime="2019-07-26T16:10:51+08:00">2019-07-26</time>
+              <time title="创建时间：2019-07-31 09:46:34 / 修改时间：09:53:04" itemprop="dateCreated datePublished" datetime="2019-07-31T09:46:34+08:00">2019-07-31</time>
             </span>
           
 
@@ -434,33 +434,8 @@ border-left-color: #1E92FB;    /*左边框颜色*/
             
 
             
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-31 09:25:16" itemprop="dateModified" datetime="2019-07-31T09:25:16+08:00">2019-07-31</time>
-              </span>
-            
           
 
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -498,74 +473,22 @@ border-left-color: #1E92FB;    /*左边框颜色*/
       
 
       
-        <h2 id="1-错误分析"><a href="#1-错误分析" class="headerlink" title="1. 错误分析"></a>1. 错误分析</h2><blockquote>
-<p>java.lang.UnsupportedOperationException 大致的意思是，你调用的关于的容器的操作是不被允许的。</p>
-</blockquote>
-<a id="more"></a>
-<hr>
-<h2 id="2-个人理解"><a href="#2-个人理解" class="headerlink" title="2. 个人理解"></a>2. 个人理解</h2><ol>
-<li>这不是说没有该方法，如果没有该方法的话，在编译期间就可以识别。 </li>
-<li>有该方法，也就是说该方法受到了限制。 </li>
-<li>限制就类似于权限限制之类的东西。（类似于linux 中对于文件权限的管理）。如果list不能实现这种权限的限制，那么会存在一些安全性的问题。所以可以看出来，权限在大部分场合都是一个必备的成分。 </li>
-<li>不同的粒度上，相关的语言提供了不同控制权限的方式。 </li>
-<li>本质上，下面的错误案例，都可以归结为权限问题。 </li>
-</ol>
-<hr>
-<h2 id="3-举例"><a href="#3-举例" class="headerlink" title="3. 举例"></a>3. 举例</h2><h3 id="Collections-unmodifiableList（-）引起的错误"><a href="#Collections-unmodifiableList（-）引起的错误" class="headerlink" title="Collections.unmodifiableList（*）引起的错误"></a>Collections.unmodifiableList（*）引起的错误</h3><pre><code>Collections.unmodifiableList 起到了对list**设置权限的目的**。
-   private static void testReadOnly(){
-        //1.创建一个list。并且这个list的访问权限未进行设置。
-        List<string> modifyList = new ArrayList<>(); 
-        //2.向其中插入相关的数据。【可行】
-        modifyList.add("you");
-        modifyList.add("are");
-        modifyList.add("boy");
-        //3.对list进行设置。使之可读。
-        modifyList = Collections.unmodifiableList(modifyList);
-        //4.在次插入，出现错误。
-        modifyList.add("hello");
-    }
-</string></code></pre>
-
-<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><ol>
-<li><p>该只读的权限维护的是，修改list中引用的权限。 </p>
-</li>
-<li><p>但是如果你如果不改引用，是可以通过引用来更改其所指向的对象的。</p>
-<pre><code>
-private static void testChangeReadOnly(){
-     ////1.创建2个list。并且这2个list的访问权限未进行设置。
-     List<stringbuilder> modifyList = new ArrayList<>(); 
-     List<stringbuilder> normalList= new LinkedList<>();
-     //2.向modifylist中插入元素。
-     modifyList.add(new StringBuilder("you"));
-     modifyList.add(new StringBuilder("are"));
-     modifyList.add(new StringBuilder("boy"));
-     //3.设置可读权限
-     modifyList = Collections.unmodifiableList(modifyList);
-     //4.将只读的modifyList中的引用复制到normalList中。
-     normalList.addAll(modifyList);
-     //5.向normalList中插入数据。
-     normalList.add(new StringBuilder("hello"));
-     System.out.println(normalList.toString());//[you, are, boy, hello]
-
-     //6.更改只读list中，引用所指向的对象的值。
-     System.out.println("更改之前 ----> " + modifyList.toString());//更改之前 ----> [you, are, boy]
-     //更改
-     modifyList.get(1).append("~~~~~");
-     System.out.println("更改之后 ----> " + modifyList.toString());//更改之后 ----> [you, are~~~~~, boy]
- } 
-</stringbuilder></stringbuilder></code></pre><pre><code>输出结果：
-<p>[you, are, boy, hello]<br>更改之前 —-&gt; [you, are, boy]<br>更改之后 —-&gt; [you, are<del>~</del>, boy]<br></p></code></pre><p></p>
-<h3 id="使用Arrays-asLisvt-后调用add，remove这些method时出现"><a href="#使用Arrays-asLisvt-后调用add，remove这些method时出现" class="headerlink" title="使用Arrays.asLisvt()后调用add，remove这些method时出现"></a>使用Arrays.asLisvt()后调用add，remove这些method时出现</h3><blockquote>
-<p>Arrays.asLisvt() 返回java.util.ArraysArrayList，而不是ArrayList。</p>
-<p>ArraysArrayList和ArrayList都是继承AbstractList，remove，add等method在AbstractList中是默认throw   UnsupportedOperationException而且不作任何操作。</p>
-<p>ArrayList override这些method来对list进行操作，但是Arrays$ArrayList没有override remove(int)，add(int)等，所以throw UnsupportedOperationException</p>
-</blockquote>
-</li>
-</ol>
-<h4 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h4><p>和上面异常的处理一样，将引用操作转移到其他地方。</p>
-<pre><code>List list = Arrays.asList(fixArray[]);
-List newList = new ArrayList(list); 
+        <h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>在博客的根目录执行以下命令</p>
+<pre><code>npm install hexo-generator-searchdb --save
 </code></pre>
+<a id="more"></a>
+<h2 id="全局配置文件-config-yml"><a href="#全局配置文件-config-yml" class="headerlink" title="全局配置文件_config.yml"></a>全局配置文件_config.yml</h2><pre><code>search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+</code></pre>
+<h2 id="hexo主题配置文件"><a href="#hexo主题配置文件" class="headerlink" title="hexo主题配置文件"></a>hexo主题配置文件</h2><pre><code># Local search
+# Dependencies: https://github.com/flashlab/hexo-generator-search
+local_search:
+  enable: true
+</code></pre>
+
 
       
     </div>
@@ -596,9 +519,9 @@ List newList = new ArrayList(list);
         
         <div class="post-tags">
           
-            <a href="/tags/错误分析/" rel="tag"># 错误分析</a>
+            <a href="/tags/blog/" rel="tag"># blog</a>
           
-            <a href="/tags/Android/" rel="tag"># Android</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
         </div>
       
@@ -611,8 +534,8 @@ List newList = new ArrayList(list);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/undefined/判断当前activity-是否在栈顶/" rel="next" title="判断当前activity 是否在栈顶">
-                <i class="fa fa-chevron-left"></i> 判断当前activity 是否在栈顶
+              <a href="/20190731/use-hexo-scripts-backup-blog-source-files.html" rel="next" title="巧用Hexo脚本——备份博客源文件">
+                <i class="fa fa-chevron-left"></i> 巧用Hexo脚本——备份博客源文件
               </a>
             
           </div>
@@ -621,8 +544,8 @@ List newList = new ArrayList(list);
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/undefined/hexo博客的搭建/" rel="prev" title="hexo博客的搭建">
-                hexo博客的搭建 <i class="fa fa-chevron-right"></i>
+              <a href="/20190731/compress-hexo-blog-with-gulp4.html" rel="prev" title="利用gulp4对Hexo博客压缩">
+                利用gulp4对Hexo博客压缩 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -804,7 +727,7 @@ List newList = new ArrayList(list);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-错误分析"><span class="nav-number">1.</span> <span class="nav-text">1. 错误分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-个人理解"><span class="nav-number">2.</span> <span class="nav-text">2. 个人理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-举例"><span class="nav-number">3.</span> <span class="nav-text">3. 举例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Collections-unmodifiableList（-）引起的错误"><span class="nav-number">3.1.</span> <span class="nav-text">Collections.unmodifiableList（*）引起的错误</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法"><span class="nav-number">3.1.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Arrays-asLisvt-后调用add，remove这些method时出现"><span class="nav-number">3.2.</span> <span class="nav-text">使用Arrays.asLisvt()后调用add，remove这些method时出现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件"><span class="nav-number">1.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局配置文件-config-yml"><span class="nav-number">2.</span> <span class="nav-text">全局配置文件_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo主题配置文件"><span class="nav-number">3.</span> <span class="nav-text">hexo主题配置文件</span></a></li></ol></div>
             
 
           </div>

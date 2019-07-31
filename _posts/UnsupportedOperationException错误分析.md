@@ -1,10 +1,11 @@
 ---
 title: UnsupportedOperationException错误分析
-date: 2019/7/26 16:10:51 
+date: '2019/7/26 16:10:51'
 categories: Android
 tags:
-- 错误分析
-- Android
+  - 错误分析
+  - Android
+translate_title: unsupportedoperationexception-error-analysis
 ---
 ## 1. 错误分析 ##
 >java.lang.UnsupportedOperationException 大致的意思是，你调用的关于的容器的操作是不被允许的。

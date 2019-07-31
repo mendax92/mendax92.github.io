@@ -1,10 +1,11 @@
 ---
 title: hexo博客的搭建
-date: 2019/7/26 16:46:12 
+date: '2019/7/26 16:46:12'
 categories: 博客的搭建
 tags:
-- blog
-- hexo
+  - blog
+  - hexo
+translate_title: hexo-blog-building
 ---
 ## 准备工作(window7 64位) ##
 - 下载node.js并安装（[node官网](https://nodejs.org/en/download/)下载安装），默认会安装npm

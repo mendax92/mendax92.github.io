@@ -121,18 +121,18 @@ border-left-color: #1E92FB;    /*左边框颜色*/
   };
 </script>
 
-  <meta name="description" content="安装插件在博客的根目录执行以下命令 npm install hexo-generator-searchdb --save">
+  <meta name="description" content="Hexo脚本  Hexo命令会自动触发一些事件，利用这些事件，我们可以为不同的Hexo命令添加一些额外的自定义功能。我们只需要在Hexo根目录下添加一个scripts文件夹，然后将我们编写的脚本文件放在这个文件夹中，当某一事件被触发时，接收相应事件的脚本就会被自动执行。">
 <meta name="keywords" content="blog,hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo增加搜索功能">
-<meta property="og:url" content="http://blog.simcom.ltd/undefined/Hexo增加搜索功能/index.html">
+<meta property="og:title" content="巧用Hexo脚本——备份博客源文件">
+<meta property="og:url" content="http://blog.simcom.ltd/20190731/use-hexo-scripts-backup-blog-source-files.html">
 <meta property="og:site_name" content="Mendax&#39;s Blog">
-<meta property="og:description" content="安装插件在博客的根目录执行以下命令 npm install hexo-generator-searchdb --save">
+<meta property="og:description" content="Hexo脚本  Hexo命令会自动触发一些事件，利用这些事件，我们可以为不同的Hexo命令添加一些额外的自定义功能。我们只需要在Hexo根目录下添加一个scripts文件夹，然后将我们编写的脚本文件放在这个文件夹中，当某一事件被触发时，接收相应事件的脚本就会被自动执行。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-31T01:53:04.901Z">
+<meta property="og:updated_time" content="2019-07-31T01:25:16.545Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo增加搜索功能">
-<meta name="twitter:description" content="安装插件在博客的根目录执行以下命令 npm install hexo-generator-searchdb --save">
+<meta name="twitter:title" content="巧用Hexo脚本——备份博客源文件">
+<meta name="twitter:description" content="Hexo脚本  Hexo命令会自动触发一些事件，利用这些事件，我们可以为不同的Hexo命令添加一些额外的自定义功能。我们只需要在Hexo根目录下添加一个scripts文件夹，然后将我们编写的脚本文件放在这个文件夹中，当某一事件被触发时，接收相应事件的脚本就会被自动执行。">
 
 
 
@@ -140,7 +140,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 
   
   
-  <link rel="canonical" href="http://blog.simcom.ltd/undefined/Hexo增加搜索功能/">
+  <link rel="canonical" href="http://blog.simcom.ltd/20190731/use-hexo-scripts-backup-blog-source-files">
 
 
 
@@ -151,7 +151,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 </script>
 
   
-  <title>Hexo增加搜索功能 | Mendax's Blog</title>
+  <title>巧用Hexo脚本——备份博客源文件 | Mendax's Blog</title>
   
 
 
@@ -383,7 +383,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.simcom.ltd/undefined/Hexo增加搜索功能/">
+    <link itemprop="mainEntityOfPage" href="http://blog.simcom.ltd/20190731/use-hexo-scripts-backup-blog-source-files.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mendax">
@@ -400,7 +400,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo增加搜索功能
+          <h1 class="post-title" itemprop="name headline">巧用Hexo脚本——备份博客源文件
 
               
             
@@ -426,7 +426,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
                 
               
 
-              <time title="创建时间：2019-07-31 09:46:34 / 修改时间：09:53:04" itemprop="dateCreated datePublished" datetime="2019-07-31T09:46:34+08:00">2019-07-31</time>
+              <time title="创建时间：2019-07-31 09:14:41 / 修改时间：09:25:16" itemprop="dateCreated datePublished" datetime="2019-07-31T09:14:41+08:00">2019-07-31</time>
             </span>
           
 
@@ -473,23 +473,34 @@ border-left-color: #1E92FB;    /*左边框颜色*/
       
 
       
-        <h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>在博客的根目录执行以下命令</p>
-<pre><code>npm install hexo-generator-searchdb --save
-</code></pre>
+        <h2 id="Hexo脚本"><a href="#Hexo脚本" class="headerlink" title="Hexo脚本"></a>Hexo脚本</h2><p>  Hexo命令会自动触发一些事件，利用这些事件，我们可以为不同的Hexo命令添加一些额外的自定义功能。我们只需要在Hexo根目录下添加一个scripts文件夹，然后将我们编写的脚本文件放在这个文件夹中，当某一事件被触发时，接收相应事件的脚本就会被自动执行。</p>
 <a id="more"></a>
-<h2 id="全局配置文件-config-yml"><a href="#全局配置文件-config-yml" class="headerlink" title="全局配置文件_config.yml"></a>全局配置文件_config.yml</h2><pre><code>search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
-</code></pre>
-<h2 id="hexo主题配置文件"><a href="#hexo主题配置文件" class="headerlink" title="hexo主题配置文件"></a>hexo主题配置文件</h2><pre><code># Local search
-# Dependencies: https://github.com/flashlab/hexo-generator-search
-local_search:
-  enable: true
-</code></pre>
+<h3 id="自动备份博客源文件"><a href="#自动备份博客源文件" class="headerlink" title="自动备份博客源文件"></a>自动备份博客源文件</h3><p>  Hexo部署的github-pages博客在发布时只会上传生成的页面文件，而我们的源文件却没有上传,这就导致博客源文件没有备份，当然我们可以在GitHub上新建一个repo来管理我们的源文件，但是这样每次都需要手动备份，有点麻烦。这个时候，就需要利用Hexo事件来运行自动脚本了。直接上代码：</p>
+<pre><code>// filename: backup.js
+require('shelljs/global');
+try {
+    hexo.on('generateAfter', function() {//当generate完成后执行备份
+        run();
+    });
+} catch (e) {
+    console.log("产生了一个错误<(￣3￣)> !，错误详情为：" + e.toString());
+}
+function run() {
+    echo("==================Source Auto Backup Begin========================");
+    cd('/home/dhmemi/Documents/blog_dhmemi');    //此处修改为Hexo根目录路径
+    exec('if [ ! -d "public" ]; then\nmkdir public\nfi');
 
-
+    if (exec('cp -avx source public/').code !== 0) {
+        echo('Error: copy source failed');
+        exit(1);
+    } else {
+        echo("==============Source Auto Backup Complete=========================")
+    }
+}
+</(￣3￣)></code></pre>
+<p>这个脚本所完成的功能很简单，就是在Hexo生成（generate）完成后，将source文件夹复制到public目录下，这样，在发布（deploy）时，源文件目录就会自动被复制到.git_deploy目录下并被当作生成目录发布到github上。保存上面的脚本到scripts目录下即可。<br>当然在运行这个脚本之前，你一定注意到了第一行的”shelljs/global”，所以你要安装shelljs模块：</p>
+<pre><code>sudo npm install --save shelljs
+</code></pre>
       
     </div>
 
@@ -534,8 +545,8 @@ local_search:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/undefined/巧用Hexo脚本——备份博客源文件/" rel="next" title="巧用Hexo脚本——备份博客源文件">
-                <i class="fa fa-chevron-left"></i> 巧用Hexo脚本——备份博客源文件
+              <a href="/20190730/five-ways-to-get-the-width-and-height-of-components-during-startup-process.html" rel="next" title="Activity启动过程中获取组件宽高的五种方式">
+                <i class="fa fa-chevron-left"></i> Activity启动过程中获取组件宽高的五种方式
               </a>
             
           </div>
@@ -544,8 +555,8 @@ local_search:
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/undefined/利用gulp4对Hexo博客压缩/" rel="prev" title="利用gulp4对Hexo博客压缩">
-                利用gulp4对Hexo博客压缩 <i class="fa fa-chevron-right"></i>
+              <a href="/20190731/hexo-increases-search-function.html" rel="prev" title="Hexo增加搜索功能">
+                Hexo增加搜索功能 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -727,7 +738,7 @@ local_search:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件"><span class="nav-number">1.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局配置文件-config-yml"><span class="nav-number">2.</span> <span class="nav-text">全局配置文件_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo主题配置文件"><span class="nav-number">3.</span> <span class="nav-text">hexo主题配置文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo脚本"><span class="nav-number">1.</span> <span class="nav-text">Hexo脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动备份博客源文件"><span class="nav-number">1.1.</span> <span class="nav-text">自动备份博客源文件</span></a></li></ol></li></ol></div>
             
 
           </div>

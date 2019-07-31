@@ -1,10 +1,11 @@
 ---
 title: Activity启动过程中获取组件宽高的五种方式
-date: 2019-07-30 11:57:39
 categories: Android
 tags:
-- 工具
-- Android
+  - 工具
+  - Android
+translate_title: five-ways-to-get-the-width-and-height-of-components-during-startup-process
+date: 2019-07-30 11:57:39
 ---
 ## 问题：在Activity的启动流程中通过getWidht和getHeight方法获取组件的宽度和高度 ##
 <pre><code>//在onCreate方法中调用，用于获取TextView的宽度和高度
