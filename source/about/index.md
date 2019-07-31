@@ -8,7 +8,7 @@ date: 2019-07-30 15:36:44
 - mendax
 - 职业：android开发工程师
 - 城市：深圳
-- [简历下载](./download/王伟忠_Android开发_4年_18503057940.doc)
+- [简历下载](../download/王伟忠_Android开发_4年_18503057940.doc)
 ## 联系方式 ##
 - Email:mendax92@163.com
 ## FAQ ##
