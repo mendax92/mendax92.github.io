@@ -121,18 +121,18 @@ border-left-color: #1E92FB;    /*左边框颜色*/
   };
 </script>
 
-  <meta name="description" content="Hexo脚本  Hexo命令会自动触发一些事件，利用这些事件，我们可以为不同的Hexo命令添加一些额外的自定义功能。我们只需要在Hexo根目录下添加一个scripts文件夹，然后将我们编写的脚本文件放在这个文件夹中，当某一事件被触发时，接收相应事件的脚本就会被自动执行。 自动备份博客源文件  Hexo部署的github-pages博客在发布时只会上传生成的页面文件，而我们的源文件却没有上传,这就导">
+  <meta name="description" content="Hexo脚本  Hexo命令会自动触发一些事件，利用这些事件，我们可以为不同的Hexo命令添加一些额外的自定义功能。我们只需要在Hexo根目录下添加一个scripts文件夹，然后将我们编写的脚本文件放在这个文件夹中，当某一事件被触发时，接收相应事件的脚本就会被自动执行。">
 <meta name="keywords" content="blog,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="巧用Hexo脚本——备份博客源文件">
 <meta property="og:url" content="http://blog.simcom.ltd/2019/07/31/巧用Hexo脚本——备份博客源文件/index.html">
 <meta property="og:site_name" content="Mendax&#39;s Blog">
-<meta property="og:description" content="Hexo脚本  Hexo命令会自动触发一些事件，利用这些事件，我们可以为不同的Hexo命令添加一些额外的自定义功能。我们只需要在Hexo根目录下添加一个scripts文件夹，然后将我们编写的脚本文件放在这个文件夹中，当某一事件被触发时，接收相应事件的脚本就会被自动执行。 自动备份博客源文件  Hexo部署的github-pages博客在发布时只会上传生成的页面文件，而我们的源文件却没有上传,这就导">
+<meta property="og:description" content="Hexo脚本  Hexo命令会自动触发一些事件，利用这些事件，我们可以为不同的Hexo命令添加一些额外的自定义功能。我们只需要在Hexo根目录下添加一个scripts文件夹，然后将我们编写的脚本文件放在这个文件夹中，当某一事件被触发时，接收相应事件的脚本就会被自动执行。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-31T01:18:05.778Z">
+<meta property="og:updated_time" content="2019-07-31T01:25:16.545Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="巧用Hexo脚本——备份博客源文件">
-<meta name="twitter:description" content="Hexo脚本  Hexo命令会自动触发一些事件，利用这些事件，我们可以为不同的Hexo命令添加一些额外的自定义功能。我们只需要在Hexo根目录下添加一个scripts文件夹，然后将我们编写的脚本文件放在这个文件夹中，当某一事件被触发时，接收相应事件的脚本就会被自动执行。 自动备份博客源文件  Hexo部署的github-pages博客在发布时只会上传生成的页面文件，而我们的源文件却没有上传,这就导">
+<meta name="twitter:description" content="Hexo脚本  Hexo命令会自动触发一些事件，利用这些事件，我们可以为不同的Hexo命令添加一些额外的自定义功能。我们只需要在Hexo根目录下添加一个scripts文件夹，然后将我们编写的脚本文件放在这个文件夹中，当某一事件被触发时，接收相应事件的脚本就会被自动执行。">
 
 
 
@@ -399,7 +399,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
                 
               
 
-              <time title="创建时间：2019-07-31 09:14:41 / 修改时间：09:18:05" itemprop="dateCreated datePublished" datetime="2019-07-31T09:14:41+08:00">2019-07-31</time>
+              <time title="创建时间：2019-07-31 09:14:41 / 修改时间：09:25:16" itemprop="dateCreated datePublished" datetime="2019-07-31T09:14:41+08:00">2019-07-31</time>
             </span>
           
 
@@ -447,6 +447,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 
       
         <h2 id="Hexo脚本"><a href="#Hexo脚本" class="headerlink" title="Hexo脚本"></a>Hexo脚本</h2><p>  Hexo命令会自动触发一些事件，利用这些事件，我们可以为不同的Hexo命令添加一些额外的自定义功能。我们只需要在Hexo根目录下添加一个scripts文件夹，然后将我们编写的脚本文件放在这个文件夹中，当某一事件被触发时，接收相应事件的脚本就会被自动执行。</p>
+<a id="more"></a>
 <h3 id="自动备份博客源文件"><a href="#自动备份博客源文件" class="headerlink" title="自动备份博客源文件"></a>自动备份博客源文件</h3><p>  Hexo部署的github-pages博客在发布时只会上传生成的页面文件，而我们的源文件却没有上传,这就导致博客源文件没有备份，当然我们可以在GitHub上新建一个repo来管理我们的源文件，但是这样每次都需要手动备份，有点麻烦。这个时候，就需要利用Hexo事件来运行自动脚本了。直接上代码：</p>
 <pre><code>// filename: backup.js
 require('shelljs/global');
