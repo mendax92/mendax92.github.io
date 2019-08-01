@@ -20,11 +20,9 @@ date: 2019-08-01 10:40:26
 - 上传ssl证书 并配置
 ### cloudflare
 不管你的网站是搭建在github page 还是vps ，以下方法都适用
-[cloudflare 官网](https://www.cloudflare.com/)</br>
-在域名解析配置页面点击“Crypto”(此操作跳过配置解析流程，可以自行baidu)</br>
-![](hexo-blog-to-join-https-support/1.png)</br>
-找到“Always Use HTTPS”选项打开即可</br>
-![](hexo-blog-to-join-https-support/2.png)</br>
+[cloudflare 官网](https://www.cloudflare.com/)
+![在域名解析配置页面点击“Crypto”(此操作跳过配置解析流程，可以自行baidu)](hexo-blog-to-join-https-support/1.png)</br>
+![找到“Always Use HTTPS”选项打开即可](hexo-blog-to-join-https-support/2.png)
 ### 手动配置流程
 阿里云、腾讯云和七牛，注册登录，根据提示填写信息，不久就可以拿到证书。
 解压www.simcom.ltd.zip，可以得到下列文件：
