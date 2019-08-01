@@ -135,7 +135,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://blog.simcom.ltd/20190801/hexo-blog-to-join-https-support/1.png">
 <meta property="og:image" content="http://blog.simcom.ltd/20190801/hexo-blog-to-join-https-support/2.png">
-<meta property="og:updated_time" content="2019-08-01T04:41:54.968Z">
+<meta property="og:updated_time" content="2019-08-01T04:44:25.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo博客加入https支持">
 <meta name="twitter:description" content="前言浏览器左上角会显示一把锁，这个就叫做https,有人说Google早在2014年8月对外宣称它会影响网站的SEO排名，并在2018年2月发布了另外一个声明，如果网站没有开通https，2018年7月以后浏览器会强制显示该网站不安全。现在都2019年了~，其实https这一块Google也在弱化显示这一块，没办法现在建站门槛太低，很多人网站建好之后就不维护了，更别说https的加入了.我这次加入">
@@ -433,7 +433,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
                 
               
 
-              <time title="创建时间：2019-08-01 10:40:26 / 修改时间：12:41:54" itemprop="dateCreated datePublished" datetime="2019-08-01T10:40:26+08:00">2019-08-01</time>
+              <time title="创建时间：2019-08-01 10:40:26 / 修改时间：12:44:25" itemprop="dateCreated datePublished" datetime="2019-08-01T10:40:26+08:00">2019-08-01</time>
             </span>
           
 
@@ -509,7 +509,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 <li><a href="https://www.cloudflare.com/" target="_blank" rel="noopener">cloudflare</a></li>
 </ul>
 </li>
-<li>上传ssl证书 并配置<h3 id="cloudflare"><a href="#cloudflare" class="headerlink" title="cloudflare"></a>cloudflare</h3>不管你的网站是搭建在github page 还是vps ，以下方法都适用<br><a href="https://www.cloudflare.com/" target="_blank" rel="noopener">cloudflare 官网</a><br><img src="hexo-blog-to-join-https-support/1.png" alt="在域名解析配置页面点击“Crypto”(此操作跳过配置解析流程，可以自行baidu)"><br><br><img src="hexo-blog-to-join-https-support/2.png" alt="找到“Always Use HTTPS”选项打开即可"><h3 id="手动配置流程"><a href="#手动配置流程" class="headerlink" title="手动配置流程"></a>手动配置流程</h3>阿里云、腾讯云和七牛，注册登录，根据提示填写信息，不久就可以拿到证书。<br>解压<a href="http://www.simcom.ltd.zip，可以得到下列文件：" target="_blank" rel="noopener">www.simcom.ltd.zip，可以得到下列文件：</a><pre><code>www.simcom.ltd
+<li>上传ssl证书 并配置<h3 id="cloudflare"><a href="#cloudflare" class="headerlink" title="cloudflare"></a>cloudflare</h3>不管你的网站是搭建在github page 还是vps ，以下方法都适用<a href="https://www.cloudflare.com/" target="_blank" rel="noopener">cloudflare 官网</a><br><img src="hexo-blog-to-join-https-support/1.png" alt="在域名解析配置页面点击“Crypto”(此操作跳过配置解析流程，可以自行baidu)"><br><br><img src="hexo-blog-to-join-https-support/2.png" alt="找到“Always Use HTTPS”选项打开即可"><h3 id="手动配置流程"><a href="#手动配置流程" class="headerlink" title="手动配置流程"></a>手动配置流程</h3>阿里云、腾讯云和七牛，注册登录，根据提示填写信息，不久就可以拿到证书。<br>解压<a href="http://www.simcom.ltd.zip，可以得到下列文件：" target="_blank" rel="noopener">www.simcom.ltd.zip，可以得到下列文件：</a><pre><code>www.simcom.ltd
 │  www.simcom.ltd.csr
 │
 ├─Apache
@@ -531,7 +531,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 </code></pre>
 <h4 id="上传证书"><a href="#上传证书" class="headerlink" title="上传证书"></a>上传证书</h4></li>
 <li>服务器上，创建目录ssl<br>mkdir /etc/nginx/ssl</li>
-<li>使用xftp上传 <a href="http://www.simcom.ltd/Nginx" target="_blank" rel="noopener">www.simcom.ltd/Nginx</a> 文件夹中的1_<a href="http://www.simcom.ltd_bundle.crt和2_www.simcom.ltd.key到ssl目录" target="_blank" rel="noopener">www.simcom.ltd_bundle.crt和2_www.simcom.ltd.key到ssl目录</a></li>
+<li>使用xftp上传“<a href="http://www.simcom.ltd/Nginx”文件夹中的“1_www.simcom.ltd_bundle.crt”和“2_www.simcom.ltd.key”到ssl目录" target="_blank" rel="noopener">www.simcom.ltd/Nginx”文件夹中的“1_www.simcom.ltd_bundle.crt”和“2_www.simcom.ltd.key”到ssl目录</a></li>
 </ul>
 <h4 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h4><p>/etc/nginx/conf.d中新建配置文件<a href="http://www.voidking.com.conf" target="_blank" rel="noopener">www.voidking.com.conf</a></p>
 <pre><code>server {
