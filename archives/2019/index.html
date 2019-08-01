@@ -1080,6 +1080,32 @@ show_date_time();
 
 
   
+    
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'tHKvHpEuLq9XP69m8qBhChfh# Your leancloud application appid',
+    appKey: 'bxgLAuhLtGY2kbm0xO5y80s0# Your leancloud application appkey',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+  
   <script type="text/javascript" src="/js/src/hexo-next-bottomheart.js"></script>
 	<link rel="stylesheet" href="/dist/APlayer.min.css">
 	<div id="aplayer"></div>
