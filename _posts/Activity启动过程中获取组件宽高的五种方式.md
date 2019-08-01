@@ -34,7 +34,7 @@ button1.setOnClickListener(new View.OnClickListener() {
             }
 });</pre></code>
 这样敲完代码之后，我们执行这段代码，界面入下图所示：
-![app展示图](Activity启动过程中获取组件宽高的五种方式/2019-07-30115739.png)
+![app展示图](five-ways-to-get-the-width-and-height-of-components-during-startup-process/2019-07-30115739.png)
 ### 打印结果 ###
 <pre><code>I/MainActivity: height:57  width:225
 </pre></code>

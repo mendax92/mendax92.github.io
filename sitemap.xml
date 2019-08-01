@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.simcom.ltd/20190730/five-ways-to-get-the-width-and-height-of-components-during-startup-process.html</loc>
+    
+    <lastmod>2019-08-01T04:28:02.088Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.simcom.ltd/20190801/hexo-blog-to-join-https-support.html</loc>
     
-    <lastmod>2019-08-01T04:20:42.819Z</lastmod>
+    <lastmod>2019-08-01T04:28:02.087Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.simcom.ltd/20190731/hexo-link-seo-optimization.html</loc>
+    
+    <lastmod>2019-08-01T04:22:35.494Z</lastmod>
     
   </url>
   
@@ -12,20 +26,6 @@
     <loc>http://blog.simcom.ltd/about/index.html</loc>
     
     <lastmod>2019-08-01T03:43:47.220Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.simcom.ltd/20190730/five-ways-to-get-the-width-and-height-of-components-during-startup-process.html</loc>
-    
-    <lastmod>2019-08-01T02:33:10.690Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.simcom.ltd/20190731/hexo-link-seo-optimization.html</loc>
-    
-    <lastmod>2019-07-31T09:56:19.620Z</lastmod>
     
   </url>
   

@@ -7,7 +7,7 @@ tags:
 translate_title: hexo-link-seo-optimization
 date: 2019-07-31 17:33:01
 ---
-## 序言 ##
+## 前言
 hexo 生成文章的默认链接是“https://blog.simcom.ltd/2019/01/14/“Markdown file name””,如果文章标题是英文的还好，如果是中文的，看着就各种别扭，而且这样也不利于seo优化。以下内容是讲如何做链接的seo优化.
 <!--more-->
 ## 优化方法 ##
