@@ -1,11 +1,11 @@
 ---
 title: hexo博客加入https支持
-date: 2019-08-01 10:40:26
-tags:
 tags:
   - blog
   - hexo
   - seo
+translate_title: hexo-blog-to-join-https-support
+date: 2019-08-01 10:40:26
 ---
 ## 前言 
 浏览器左上角会显示一把锁，这个就叫做https,有人说Google早在2014年8月对外宣称它会影响网站的SEO排名，并在2018年2月发布了另外一个声明，如果网站没有开通https，2018年7月以后浏览器会强制显示该网站不安全。现在都2019年了~~~，其实https这一块Google也在弱化显示这一块，没办法现在建站门槛太低，很多人网站建好之后就不维护了，更别说https的加入了.我这次加入https 也是因为在加入评论功能的时候左上角显示个警告图标（没办法！强迫症晚期）.<br>以下是网站接入https教程
