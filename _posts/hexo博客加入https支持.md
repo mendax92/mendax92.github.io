@@ -48,7 +48,7 @@ date: 2019-08-01 10:40:26
 #### 上传证书
 - 服务器上，创建目录ssl
 mkdir /etc/nginx/ssl
-- 使用xftp上传“www.simcom.ltd/Nginx”文件夹中的“1_www.simcom.ltd_bundle.crt”和“2_www.simcom.ltd.key”到ssl目录
+- 将Nginx文件夹中的文件使用xftp上传到ssl目录(我这边是nginx环境)
 
 #### 配置nginx
 /etc/nginx/conf.d中新建配置文件www.voidking.com.conf
