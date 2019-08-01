@@ -88,3 +88,4 @@ $(document).ready(function() {
       : NexT.utils.displaySidebar();
   }
 });
+

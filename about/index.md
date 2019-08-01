@@ -3,7 +3,7 @@ title: 关于我
 translate_title: about-me
 date: 2019-07-30 15:36:44
 ---
-## 序言 ##
+## 前言 ##
 “没有生而知之，只有学而知之” 
 ## 个人信息 ##
 - mendax
