@@ -1,5 +1,6 @@
 ---
 title: 巧用Hexo脚本——备份博客源文件
+categories: 博客的搭建
 tags:
   - hexo
   - blog

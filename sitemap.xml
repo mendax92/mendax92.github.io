@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.simcom.ltd/20190731/use-hexo-scripts-backup-blog-source-files.html</loc>
+    
+    <lastmod>2019-08-02T04:59:27.654Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.simcom.ltd/20190731/compress-hexo-blog-with-gulp4.html</loc>
+    
+    <lastmod>2019-08-02T04:59:16.742Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.simcom.ltd/20190731/hexo-increases-search-function.html</loc>
+    
+    <lastmod>2019-08-02T04:59:03.985Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.simcom.ltd/20190731/hexo-link-seo-optimization.html</loc>
+    
+    <lastmod>2019-08-02T04:58:56.080Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.simcom.ltd/20190801/hexo-blog-to-join-https-support.html</loc>
+    
+    <lastmod>2019-08-02T04:58:39.663Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.simcom.ltd/20190802/how-to-effectively-avoid-memory-leaks-when-customizing-handlers.html</loc>
+    
+    <lastmod>2019-08-02T04:58:22.007Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.simcom.ltd/about/index.html</loc>
+    
+    <lastmod>2019-08-02T02:19:09.878Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.simcom.ltd/question/index.html</loc>
     
     <lastmod>2019-08-02T01:20:10.676Z</lastmod>
@@ -9,44 +58,9 @@
   </url>
   
   <url>
-    <loc>http://blog.simcom.ltd/20190802/how-to-effectively-avoid-memory-leaks-when-customizing.html</loc>
-    
-    <lastmod>2019-08-02T01:20:10.303Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.simcom.ltd/20190801/hexo-blog-to-join-https-support.html</loc>
-    
-    <lastmod>2019-08-01T04:55:00.001Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.simcom.ltd/20190730/five-ways-to-get-the-width-and-height-of-components-during-startup-process.html</loc>
     
     <lastmod>2019-08-01T04:28:02.088Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.simcom.ltd/20190731/hexo-link-seo-optimization.html</loc>
-    
-    <lastmod>2019-08-01T04:22:35.494Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.simcom.ltd/about/index.html</loc>
-    
-    <lastmod>2019-08-01T03:43:47.220Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.simcom.ltd/20190731/compress-hexo-blog-with-gulp4.html</loc>
-    
-    <lastmod>2019-07-31T09:52:48.519Z</lastmod>
     
   </url>
   
@@ -65,23 +79,9 @@
   </url>
   
   <url>
-    <loc>http://blog.simcom.ltd/20190731/hexo-increases-search-function.html</loc>
-    
-    <lastmod>2019-07-31T09:28:51.600Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.simcom.ltd/20190726/unsupportedoperationexception-error-analysis.html</loc>
     
     <lastmod>2019-07-31T09:28:51.491Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.simcom.ltd/20190731/use-hexo-scripts-backup-blog-source-files.html</loc>
-    
-    <lastmod>2019-07-31T09:28:51.379Z</lastmod>
     
   </url>
   

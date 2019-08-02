@@ -1,5 +1,6 @@
 ---
 title: hexo博客加入https支持
+categories: 博客的搭建
 tags:
   - blog
   - hexo

@@ -1,5 +1,6 @@
 ---
 title: hexo链接SEO优化
+categories: 博客的搭建
 tags:
   - blog
   - hexo

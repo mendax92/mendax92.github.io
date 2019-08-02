@@ -1,5 +1,6 @@
 ---
 title: 利用gulp4对Hexo博客压缩
+categories: 博客的搭建
 tags:
   - blog
   - hexo

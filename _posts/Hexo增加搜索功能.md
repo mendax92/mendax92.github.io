@@ -1,5 +1,6 @@
 ---
 title: Hexo增加搜索功能
+categories: 博客的搭建
 tags:
   - blog
   - hexo
