@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.simcom.ltd/question/index.html</loc>
+    
+    <lastmod>2019-08-02T01:20:10.676Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.simcom.ltd/20190802/how-to-effectively-avoid-memory-leaks-when-customizing.html</loc>
+    
+    <lastmod>2019-08-02T01:20:10.303Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.simcom.ltd/20190801/hexo-blog-to-join-https-support.html</loc>
     
     <lastmod>2019-08-01T04:55:00.001Z</lastmod>
