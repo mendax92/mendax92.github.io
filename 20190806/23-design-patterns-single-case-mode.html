@@ -125,18 +125,18 @@ border-left-color: #1E92FB;    /*左边框颜色*/
   };
 </script>
 
-  <meta name="description" content="自定义 Handler 时如何有效地避免内存泄漏问题？">
-<meta name="keywords" content="Daily question,Android">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Android-Daily-Question-Summary">
-<meta property="og:url" content="http://blog.simcom.ltd/question/index.html">
+  <meta name="description" content="单例模式详解单例模式的定义与特点 单例（Singleton）模式的定义：指一个类只有一个实例，且该类能自行创建这个实例的一种模式。例如，Windows 中只能打开一个任务管理器，这样可以避免因打开多个任务管理器窗口而造成内存资源的浪费，或出现各个窗口显示内容的不一致等错误。(计算机系统中,很多功能都被设计成单例)">
+<meta name="keywords" content="Android,设计模式,java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="23种设计模式-单例模式详解">
+<meta property="og:url" content="http://blog.simcom.ltd/20190806/23-design-patterns-single-case-mode.html">
 <meta property="og:site_name" content="Mendax&#39;s Blog">
-<meta property="og:description" content="自定义 Handler 时如何有效地避免内存泄漏问题？">
+<meta property="og:description" content="单例模式详解单例模式的定义与特点 单例（Singleton）模式的定义：指一个类只有一个实例，且该类能自行创建这个实例的一种模式。例如，Windows 中只能打开一个任务管理器，这样可以避免因打开多个任务管理器窗口而造成内存资源的浪费，或出现各个窗口显示内容的不一致等错误。(计算机系统中,很多功能都被设计成单例)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-02T01:20:10.676Z">
+<meta property="og:updated_time" content="2019-08-06T01:06:11.691Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android-Daily-Question-Summary">
-<meta name="twitter:description" content="自定义 Handler 时如何有效地避免内存泄漏问题？">
+<meta name="twitter:title" content="23种设计模式-单例模式详解">
+<meta name="twitter:description" content="单例模式详解单例模式的定义与特点 单例（Singleton）模式的定义：指一个类只有一个实例，且该类能自行创建这个实例的一种模式。例如，Windows 中只能打开一个任务管理器，这样可以避免因打开多个任务管理器窗口而造成内存资源的浪费，或出现各个窗口显示内容的不一致等错误。(计算机系统中,很多功能都被设计成单例)">
 
 
 
@@ -144,7 +144,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 
   
   
-  <link rel="canonical" href="http://blog.simcom.ltd/question/">
+  <link rel="canonical" href="http://blog.simcom.ltd/20190806/23-design-patterns-single-case-mode">
 
 
 
@@ -155,7 +155,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 </script>
 
   
-  <title>Android-Daily-Question-Summary | Mendax's Blog</title>
+  <title>23种设计模式-单例模式详解 | Mendax's Blog</title>
   
 
 
@@ -273,7 +273,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
         
         
           
-          <li class="menu-item menu-item-question menu-item-active">
+          <li class="menu-item menu-item-question">
 
     
     
@@ -353,73 +353,263 @@ border-left-color: #1E92FB;    /*左边框颜色*/
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
+      
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.simcom.ltd/20190806/23-design-patterns-single-case-mode.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mendax">
+      <meta itemprop="description" content="没有生而知之，只有学而知之">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mendax's Blog">
+    </span>
+
     
-    
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">Android-Daily-Question-Summary
+        
+        
+          <h1 class="post-title" itemprop="name headline">23种设计模式-单例模式详解
 
-</h1>
+              
+            
+          </h1>
+        
 
-<div class="post-meta">
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-06 09:04:19 / 修改时间：09:06:11" itemprop="dateCreated datePublished" datetime="2019-08-06T09:04:19+08:00">2019-08-06</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          
+            
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="fa fa-comment-o"></i>
+    </span>
+    
+      <span class="post-meta-item-text">评论数：</span>
+    
+  
+    <a href="/20190806/23-design-patterns-single-case-mode.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/20190806/23-design-patterns-single-case-mode.html" itemprop="commentCount"></span>
+    </a>
+  </span>
   
   
+          
 
+          <br>
+          
 
+          
 
-</div>
+          
 
-</header>
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
-      <div class="post-body">
-        
-        
-          <ol>
-<li><a href>自定义 Handler 时如何有效地避免内存泄漏问题？</a></li>
-</ol>
 
-        
-      </div>
       
-      
+        <h2 id="单例模式详解"><a href="#单例模式详解" class="headerlink" title="单例模式详解"></a>单例模式详解</h2><h3 id="单例模式的定义与特点"><a href="#单例模式的定义与特点" class="headerlink" title="单例模式的定义与特点"></a>单例模式的定义与特点</h3><blockquote>
+<p>单例（Singleton）模式的定义：指一个类只有一个实例，且该类能自行创建这个实例的一种模式。例如，Windows 中只能打开一个任务管理器，这样可以避免因打开多个任务管理器窗口而造成内存资源的浪费，或出现各个窗口显示内容的不一致等错误。(计算机系统中,很多功能都被设计成单例)<br></p>
+</blockquote>
+<a id="more"></a>
+<p>单例模式有 3 个特点：</p>
+<ul>
+<li>单例类只有一个实例对象；</li>
+<li>该单例对象必须由单例类自行创建；</li>
+<li>单例类对外提供一个访问该单例的全局访问点；<h3 id="单例模式的结构与实现"><a href="#单例模式的结构与实现" class="headerlink" title="单例模式的结构与实现"></a>单例模式的结构与实现</h3></li>
+<li>结构<ul>
+<li>单例类：包含一个实例且能自行创建这个实例的类。</li>
+<li>访问类：使用单例的类。<br><br><a href="java-design-pattern-23-patterns/2019-08-06-02.png">单例模式的结构图</a></li>
+</ul>
+</li>
+<li>实现<ul>
+<li>懒汉式单例  <pre><code>//注意：如果编写的是多线程程序，则不要删除上例代码中的关键字 volatile 和 synchronized，否则将存在线程非安全的问题。如果不删除这两个关键字就能保证线程安全，但是每次访问时都要同步，会影响性能，且消耗更多的资源，这是懒汉式单例的缺点。
+//该模式的特点是类加载时没有生成单例，只有当第一次调用 getlnstance 方法时才去创建这个单例。代码如下：
+public class LazySingleton{
+private static volatile LazySingleton instance=null;    //保证 instance 在所有线程中同步
+private LazySingleton(){}    //private 避免类在外部被实例化
+public static synchronized LazySingleton getInstance()
+{
+  //getInstance 方法前加同步
+  if(instance==null)
+  {
+      instance=new LazySingleton();
+  }
+  return instance;
+}}
+  </code></pre></li>
+<li>饿汉式单例  <pre><code>//该模式的特点是类一旦加载就创建一个单例，保证在调用 getInstance 方法之前单例已经存在了
+public class HungrySingleton{
+private static final HungrySingleton instance=new HungrySingleton();
+private HungrySingleton(){}
+public static HungrySingleton getInstance()
+{
+  return instance;
+}}
+  </code></pre></li>
+</ul>
+</li>
+</ul>
+
       
     </div>
-    
-
-
 
     
+
+    
+      
+    
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/20190806/java-design-pattern-23-patterns.html" rel="next" title="Java设计模式:23种设计模式">
+                <i class="fa fa-chevron-left"></i> Java设计模式:23种设计模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/20190806/23-design-patterns-detailed-explanation-of-the-factory-method-mode.html" rel="prev" title="23种设计模式-工厂方法模式详解">
+                23种设计模式-工厂方法模式详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
   </div>
 
 
@@ -450,8 +640,17 @@ border-left-color: #1E92FB;    /*左边框颜色*/
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -575,6 +774,23 @@ border-left-color: #1E92FB;    /*左边框颜色*/
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式详解"><span class="nav-number">1.</span> <span class="nav-text">单例模式详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单例模式的定义与特点"><span class="nav-number">1.1.</span> <span class="nav-text">单例模式的定义与特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单例模式的结构与实现"><span class="nav-number">1.2.</span> <span class="nav-text">单例模式的结构与实现</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

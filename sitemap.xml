@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.simcom.ltd/20190806/23-design-patterns-detailed-explanation-of-the-factory-method-mode.html</loc>
+    
+    <lastmod>2019-08-06T01:13:04.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.simcom.ltd/20190806/java-design-pattern-23-patterns.html</loc>
+    
+    <lastmod>2019-08-06T01:13:04.530Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.simcom.ltd/20190806/23-design-patterns-single-case-mode.html</loc>
+    
+    <lastmod>2019-08-06T01:06:11.691Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.simcom.ltd/20190726/determine-if-the-current-activity-is-at-top-of-stack.html</loc>
+    
+    <lastmod>2019-08-06T00:24:14.515Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.simcom.ltd/20190802/how-to-effectively-avoid-memory-leaks-when-customizing-handlers.html</loc>
+    
+    <lastmod>2019-08-02T10:21:24.488Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.simcom.ltd/20190731/use-hexo-scripts-backup-blog-source-files.html</loc>
     
     <lastmod>2019-08-02T04:59:27.654Z</lastmod>
@@ -37,13 +72,6 @@
   </url>
   
   <url>
-    <loc>http://blog.simcom.ltd/20190802/how-to-effectively-avoid-memory-leaks-when-customizing-handlers.html</loc>
-    
-    <lastmod>2019-08-02T04:58:22.007Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.simcom.ltd/about/index.html</loc>
     
     <lastmod>2019-08-02T02:19:09.878Z</lastmod>
@@ -61,13 +89,6 @@
     <loc>http://blog.simcom.ltd/20190730/five-ways-to-get-the-width-and-height-of-components-during-startup-process.html</loc>
     
     <lastmod>2019-08-01T04:28:02.088Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.simcom.ltd/20190726/determine-if-the-current-activity-is-at-top-of-stack.html</loc>
-    
-    <lastmod>2019-07-31T09:28:51.972Z</lastmod>
     
   </url>
   

@@ -3,7 +3,8 @@ title: 判断当前activity 是否在栈顶
 date: '2019/7/26 15:34:37'
 categories: Android
 tags:
-  - 工具
+- Android
+- 工具
 translate_title: determine-if-the-current-activity-is-at-top-of-stack
 ---
 ## 判断当前activity 是否在栈顶的两种方法 ##
