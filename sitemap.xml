@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.simcom.ltd/20190806/23-design-patterns-single-case-mode.html</loc>
+    
+    <lastmod>2019-08-06T01:25:41.986Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.simcom.ltd/20190806/java-design-pattern-23-patterns.html</loc>
     
     <lastmod>2019-08-06T01:22:39.714Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://blog.simcom.ltd/20190806/23-design-patterns-detailed-explanation-of-the-factory-method-mode.html</loc>
     
     <lastmod>2019-08-06T01:13:16.296Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.simcom.ltd/20190806/23-design-patterns-single-case-mode.html</loc>
-    
-    <lastmod>2019-08-06T01:06:11.691Z</lastmod>
     
   </url>
   
