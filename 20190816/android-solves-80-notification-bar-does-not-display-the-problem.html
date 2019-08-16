@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+.pace .pace-progress {
+background: #1E92FB; /*进度条颜色*/
+height: 3px;
+}
+.pace .pace-progress-inner {
+box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+}
+.pace .pace-activity {
+border-top-color: #1E92FB;    /*上边框颜色*/
+border-left-color: #1E92FB;    /*左边框颜色*/
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    search: {
+      root: '/',
+      path: 'search.xml'
+    },
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="前言开会时领导说更新按钮点击没有反应，后面根据log日志“NotificationService: No Channel found for pkg=xxx.xxx.xxx”查到原因是因为 按钮点击之后本应在通知栏下载的通知没有显示，android 8.0加入了通知渠道，感觉加入通知渠道这个东西之后体验确实好些，打比方APP 中有多种推送通知，-打折通知，-APP更新通知，-IM聊天通知.我可以在">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android解决8.0通知栏不显示问题">
+<meta property="og:url" content="http://blog.simcom.ltd/20190816/android-solves-80-notification-bar-does-not-display-the-problem.html">
+<meta property="og:site_name" content="Mendax&#39;s Blog">
+<meta property="og:description" content="前言开会时领导说更新按钮点击没有反应，后面根据log日志“NotificationService: No Channel found for pkg=xxx.xxx.xxx”查到原因是因为 按钮点击之后本应在通知栏下载的通知没有显示，android 8.0加入了通知渠道，感觉加入通知渠道这个东西之后体验确实好些，打比方APP 中有多种推送通知，-打折通知，-APP更新通知，-IM聊天通知.我可以在">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-16T09:51:18.350Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="android解决8.0通知栏不显示问题">
+<meta name="twitter:description" content="前言开会时领导说更新按钮点击没有反应，后面根据log日志“NotificationService: No Channel found for pkg=xxx.xxx.xxx”查到原因是因为 按钮点击之后本应在通知栏下载的通知没有显示，android 8.0加入了通知渠道，感觉加入通知渠道这个东西之后体验确实好些，打比方APP 中有多种推送通知，-打折通知，-APP更新通知，-IM聊天通知.我可以在">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://blog.simcom.ltd/20190816/android-solves-80-notification-bar-does-not-display-the-problem">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>android解决8.0通知栏不显示问题 | Mendax's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mendax's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-question">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/question/" rel="section"><i class="menu-item-icon fa fa-fw fa-question"></i> <br>每日一问</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="javascript:;" class="popup-trigger">
+          
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.simcom.ltd/20190816/android-solves-80-notification-bar-does-not-display-the-problem.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mendax">
+      <meta itemprop="description" content="没有生而知之，只有学而知之">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mendax's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">android解决8.0通知栏不显示问题
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-16 12:02:28 / 修改时间：17:51:18" itemprop="dateCreated datePublished" datetime="2019-08-16T12:02:28+08:00">2019-08-16</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          
+            
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="fa fa-comment-o"></i>
+    </span>
+    
+      <span class="post-meta-item-text">评论数：</span>
+    
+  
+    <a href="/20190816/android-solves-80-notification-bar-does-not-display-the-problem.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/20190816/android-solves-80-notification-bar-does-not-display-the-problem.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>开会时领导说更新按钮点击没有反应，后面根据log日志“NotificationService: No Channel found for pkg=xxx.xxx.xxx”查到原因是因为 按钮点击之后本应在通知栏下载的通知没有显示，android 8.0加入了通知渠道，感觉加入通知渠道这个东西之后体验确实好些，打比方APP 中有多种推送通知，-打折通知，-APP更新通知，-IM聊天通知.我可以在设置中对APP 进行通知管理，打比方只允许IM聊天的通知。<br>下面是通知渠道加入的教程</p>
+<a id="more"></a>
+<h2 id="通知渠道创建流程"><a href="#通知渠道创建流程" class="headerlink" title="通知渠道创建流程"></a>通知渠道创建流程</h2><blockquote>
+<p><a href="https://developer.android.google.cn/training/notify-user/build-notification#java" target="_blank" rel="noopener">notification的创建流程</a><br><br><a href="https://developer.android.google.cn/reference/android/app/NotificationChannel.html" target="_blank" rel="noopener">NotificationChannel的官方讲解</a></p>
+</blockquote>
+<h3 id="通知渠道NotificationChannel的三个参数"><a href="#通知渠道NotificationChannel的三个参数" class="headerlink" title="通知渠道NotificationChannel的三个参数"></a>通知渠道NotificationChannel的三个参数</h3><ul>
+<li><p>channelId：通知渠道的ID 可以是任意的字符串，全局唯一就可以</p>
+</li>
+<li><p>channelName：通知渠道的名称，这个是用户可见的，开发者需要认真规划的命名</p>
+</li>
+<li><p>importance：通知渠道的重要等级，有一下几个等级，不过这个用户都是可以手动修改的<br><br>  ![通知渠道的重要等级](android-solves-80-notification-bar-does-not-display-the-problem/2019-08-16 17.png)</p>
+<h3 id="通知渠道创建-如果通知类型比较少的话，可以省略渠道组的创建和设置组ID的流程"><a href="#通知渠道创建-如果通知类型比较少的话，可以省略渠道组的创建和设置组ID的流程" class="headerlink" title="通知渠道创建(如果通知类型比较少的话，可以省略渠道组的创建和设置组ID的流程)"></a>通知渠道创建(如果通知类型比较少的话，可以省略渠道组的创建和设置组ID的流程)</h3><pre><code>private final String GROUP_ID = "my_group_01";
+private final int NOTIFICATION_ID = 1;
+private final String CHANNEL_NAME = "APP更新";
+private final String CHANNEL_DESC = "APP更新通知";
+private final String CHANNEL_ID = "2";
+//通知渠道组的创建
+notificationManager.createNotificationChannelGroup(new NotificationChannelGroup(GROUP_ID, "GROUP_NAME"));
+      NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
+      //设置组ID
+      channel.setGroup(GROUP_ID);
+      channel.setShowBadge(true);
+      channel.setLightColor(Color.RED);
+      channel.enableLights(true);
+      notificationManager.createNotificationChannel(channel);
+
+      NotificationChannel channel2 = new NotificationChannel(CHANNEL_ID_2, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
+      //设置组ID
+      channel2.setGroup(GROUP_ID);
+      channel2.setShowBadge(true);
+      channel2.setLightColor(Color.RED);
+      channel2.enableLights(true);
+notificationManager.createNotificationChannel(channel2);
+</code></pre>
+<h2 id="管理通知渠道"><a href="#管理通知渠道" class="headerlink" title="管理通知渠道"></a>管理通知渠道</h2><h3 id="删除渠道"><a href="#删除渠道" class="headerlink" title="删除渠道"></a>删除渠道</h3><pre><code>notificationManager.deleteNotificationChannel(CHANNEL_ID);
+</code></pre>
+<h3 id="删除渠道组"><a href="#删除渠道组" class="headerlink" title="删除渠道组"></a>删除渠道组</h3><pre><code>notificationManager.deleteNotificationChannelGroup(GROUP_ID);
+</code></pre>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><blockquote>
+<p>加入通知渠道之后发现依然通知无法显示，而且一直都是“NotificationService: No Channel found for pkg=xxx.xxx.xxx<br><br>stackoverflow,谷歌，百度找了个遍，有说以下三个是必须要设置的（然而我试了并没什么软用）<br><br>builder.setContentTitle() // required<br><br>.setSmallIcon() // required<br><br>.setContentText() // required<br><br>后我发现网上的教程都是”builder.setChannelId(CHANNEL_ID)”而我这边没有setChannelId()方法只有“setChannel()”,<br>发觉有可能是V7包的问题将appcompat-v7包从“26.0.0-alpha1” 换成“26.0.1”就可以了..</p>
+</blockquote>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><pre><code>public class AppUpdateService extends Service {
+  /****
+   * 发送广播的请求码
+   */
+  private final int REQUEST_CODE_BROADCAST = 0X0001;
+  public static String packageName = "com.sunnyberry.xst.service.AppUpdateService";
+  /****
+   * 发送广播的action
+   */
+  private final String BROADCAST_ACTION_CLICK = "servicetask";
+  /**
+   * 通知
+   */
+  private Notification notification;
+  /**
+   * 通知的Id
+   */
+  private final int NOTIFICATION_ID = 1;
+  private final String CHANNEL_NAME = "APP更新";
+  private final String CHANNEL_DESC = "APP更新通知";
+  private final String CHANNEL_ID = "2";
+  /**
+   * 通知管理器
+   */
+  private NotificationManager notificationManager;
+  /**
+   * 通知栏的远程View
+   */
+  private RemoteViews mRemoteViews;
+  /**
+   * 下载请求.
+   */
+  private DownloadRequest mDownloadRequest;
+
+  /**
+   * 通知栏操作的四种状态
+   */
+  public enum Status {
+      DOWNLOADING, PAUSE, FAIL, SUCCESS
+  }
+
+  /**
+   * 当前在状态 默认正在下载中
+   */
+  public static Status status = Status.DOWNLOADING;
+  private MyBroadcastReceiver myBroadcastReceiver;
+  protected static boolean isDownLoading = false;
+  private String savePath;
+  String url;
+
+  @Override
+  public void onCreate() {
+      super.onCreate();
+  }
+
+  @Nullable
+  @Override
+  public IBinder onBind(Intent intent) {
+      return null;
+  }
+
+  public static void start(Context context, String url) {
+      if (status == Status.SUCCESS || status == Status.FAIL) {
+          stopService(context);
+      }
+      if (!Utils.isServiceRunning(context, packageName)) {
+          Intent intent = new Intent(context, AppUpdateService.class);
+          intent.putExtra("url", url);
+          context.startService(intent);
+      }
+  }
+
+  public static void stopService(Context activity) {
+      Intent service = new Intent(activity, AppUpdateService.class);
+      activity.stopService(service);
+  }
+
+  @Override
+  public int onStartCommand(@Nullable Intent intent, int flags, int startId) {
+      savePath = ConstData.CACHE_OTHER_PATH + getApplicationInfo().packageName + ".apk";
+      registerBroadCast();
+      url = intent.getStringExtra("url");
+      download();
+      return super.onStartCommand(intent, flags, startId);
+  }
+
+  /**
+   * 注册按钮点击广播*
+   */
+  private void registerBroadCast() {
+      myBroadcastReceiver = new MyBroadcastReceiver();
+      IntentFilter filter = new IntentFilter();
+      filter.addAction(BROADCAST_ACTION_CLICK);
+      registerReceiver(myBroadcastReceiver, filter);
+  }
+
+
+</code></pre></li>
+</ul>
+<pre><code>/**
+ * 更新通知界面的按钮的广播
+ */
+private class MyBroadcastReceiver extends BroadcastReceiver {
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        if (!intent.getAction().equals(BROADCAST_ACTION_CLICK)) {
+            return;
+        }
+        switch (status) {
+            case DOWNLOADING:
+                /**当在下载中点击暂停按钮**/
+                pauseDownLoad();
+                mRemoteViews.setTextViewText(R.id.bt, &quot;下载&quot;);
+                mRemoteViews.setTextViewText(R.id.tv_message, &quot;暂停中...&quot;);
+                status = Status.PAUSE;
+                notificationManager.notify(NOTIFICATION_ID, notification);
+                break;
+            case SUCCESS:
+                /**当下载完成点击完成按钮时关闭通知栏**/
+                notificationManager.cancel(NOTIFICATION_ID);
+                callInstallApk();
+                break;
+            case FAIL:
+            case PAUSE:
+                /**当在暂停时点击下载按钮**/
+                download();
+                mRemoteViews.setTextViewText(R.id.bt, &quot;暂停&quot;);
+                mRemoteViews.setTextViewText(R.id.tv_message, &quot;下载中...&quot;);
+                status = Status.DOWNLOADING;
+                notificationManager.notify(NOTIFICATION_ID, notification);
+                break;
+        }
+    }
+}
+
+/**
+ * 暂停下载
+ */
+protected void pauseDownLoad() {
+    if (mDownloadRequest != null &amp;&amp; mDownloadRequest.isStarted() &amp;&amp; !mDownloadRequest.isFinished()) {
+        mDownloadRequest.cancel();
+        mDownloadRequest = null;
+        isDownLoading = false;
+    }
+}
+
+/**
+ * 下载文件
+ */
+protected void download() {
+    if (TextUtils.isEmpty(url) || !url.startsWith(&quot;http&quot;)) {
+        return;
+    }
+    showNotificationProgress(AppUpdateService.this);
+    if (!isDownLoading) {
+        isDownLoading = true;
+        mDownloadRequest = DownloadHelper.download(url, ConstData.CACHE_OTHER_PATH, getApplicationInfo().packageName + &quot;.apk&quot;, new DownloadHelper.Listener() {
+            @Override
+            public void onDownloadError(Exception exception) {
+                isDownLoading = false;
+                deleteApk();
+                downloadFail();
+            }
+
+            @Override
+            public void onProgress(int progress, long fileCount) {
+                status = Status.DOWNLOADING;
+                updateNotification(progress);
+            }
+
+            @Override
+            public void onFinish(String filePath) {
+                isDownLoading = false;
+                downloadSuccess();
+                callInstallApk();
+            }
+
+            @Override
+            public void onCancel() {
+                status = Status.FAIL;
+                isDownLoading = false;
+            }
+        });
+    }
+}
+
+private void deleteApk() {
+    File file = new File(savePath);
+    if (file.exists())
+        file.delete();
+}
+
+public void callInstallApk() {
+    startActivity(getInstallIntent());
+}
+
+public Intent getInstallIntent() {
+    isDownLoading = false;
+    try {
+        String permission = &quot;777&quot;;
+        String command = &quot;chmod &quot; + permission + &quot; &quot; + savePath;
+        Runtime runtime = Runtime.getRuntime();
+        runtime.exec(command);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+
+    Intent intent = new Intent();
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    intent.setAction(android.content.Intent.ACTION_VIEW);
+    intent.setDataAndType(Uri.fromFile(new File(savePath)), &quot;application/vnd.android.package-archive&quot;);
+    return intent;
+}
+
+/**
+ * 显示一个下载带进度条的通知
+ *
+ * @param context 上下文
+ */
+public void showNotificationProgress(Context context) {
+    /**获取通知管理器**/
+    notificationManager = (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
+    /**进度条通知构建**/
+    NotificationCompat.Builder builderProgress = new NotificationCompat.Builder(context);
+    //构建渠道
+    if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) {
+        //创建通知渠道
+        NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME,  NotificationManager.IMPORTANCE_DEFAULT);
+        mChannel.setDescription(CHANNEL_DESC);//渠道描述
+        mChannel.enableLights(true);//是否显示通知指示灯
+        mChannel.enableVibration(false);//是否振动
+        mChannel.setLightColor(Color.GREEN);//小红点颜色
+        notificationManager.createNotificationChannel(mChannel);//创建通知渠道
+        //添加渠道
+    builderProgress.setChannelId(CHANNEL_ID);
+    }
+    /**设置为一个正在进行的通知**/
+    builderProgress.setOngoing(true);
+    /**设置小图标**/
+    builderProgress.setSmallIcon(R.drawable.logo);
+    /**新建通知自定义布局**/
+    mRemoteViews= getRemoteViews(context);
+    /**设置自定义布局**/
+    builderProgress.setContent(mRemoteViews);
+    /**设置滚动提示**/
+    builderProgress.setTicker(&quot;开始下载...&quot;);
+    notification = builderProgress.build();
+    /**设置不可手动清除**/
+    notification.flags = Notification.FLAG_NO_CLEAR;
+    /**发送一个通知**/
+    notificationManager.notify(NOTIFICATION_ID, notification);
+}
+
+private RemoteViews getRemoteViews(Context context) {
+    RemoteViews mRemoteViews = new RemoteViews(context.getPackageName(), R.layout.updata_notification);
+    mRemoteViews.setTextViewText(R.id.tv_name, UIUtils.getString(R.string.app_name));
+    /**进度条ProgressBar**/
+    mRemoteViews.setProgressBar(R.id.pb, 100, 0, false);
+    /**提示信息的TextView**/
+    mRemoteViews.setTextViewText(R.id.tv_message, &quot;下载中...&quot;);
+    /**操作按钮的Button**/
+    mRemoteViews.setTextViewText(R.id.bt, &quot;暂停&quot;);
+    /**设置左侧小图标*/
+    mRemoteViews.setImageViewResource(R.id.iv, R.drawable.logo);
+    /**设置通过广播形式的PendingIntent**/
+    Intent intent = new Intent(BROADCAST_ACTION_CLICK);
+    PendingIntent pendingIntent = PendingIntent.getBroadcast(context, REQUEST_CODE_BROADCAST, intent, 0);
+    mRemoteViews.setOnClickPendingIntent(R.id.bt, pendingIntent);
+    return mRemoteViews;
+}
+
+/**
+ * 下载更改进度
+ *
+ * @param current 当前已下载大小
+ */
+private void updateNotification(int current) {
+    mRemoteViews.setTextViewText(R.id.tv_progress, current + &quot;%&quot;);
+    mRemoteViews.setProgressBar(R.id.pb, 100, current, false);
+    notificationManager.notify(NOTIFICATION_ID, notification);
+}
+
+/**
+ * 下载失败
+ */
+private void downloadFail() {
+    status = Status.FAIL;
+    mRemoteViews.setTextViewText(R.id.bt, &quot;重试&quot;);
+    mRemoteViews.setTextViewText(R.id.tv_message, &quot;下载失败&quot;);
+    notificationManager.notify(NOTIFICATION_ID, notification);
+    EventBus.getDefault().post(new AppUpdateEvent(AppUpdateEvent.Type.ERROR));
+    //stopSelf();
+}
+
+/**
+ * 下载成功
+ */
+private void downloadSuccess() {
+    status = Status.SUCCESS;
+    mRemoteViews.setTextViewText(R.id.bt, &quot;完成&quot;);
+    mRemoteViews.setTextViewText(R.id.tv_message, &quot;下载完成&quot;);
+    notificationManager.notify(NOTIFICATION_ID, notification);
+    EventBus.getDefault().post(new AppUpdateEvent(AppUpdateEvent.Type.SUCCESS));
+}
+
+/**
+ * 销毁时取消下载，并取消注册广播，防止内存溢出
+ */
+@Override
+public void onDestroy() {
+    if (myBroadcastReceiver != null) {
+        unregisterReceiver(myBroadcastReceiver);
+    }
+    super.onDestroy();
+}</code></pre><p>}<br></p>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/20190806/23-design-patterns-detailed-explanation-of-the-factory-method-mode.html" rel="next" title="23种设计模式-工厂方法模式详解">
+                <i class="fa fa-chevron-left"></i> 23种设计模式-工厂方法模式详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+  
+    
+    <div class="comments" id="comments"></div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="Mendax">
+  
+  <p class="site-author-name" itemprop="name">Mendax</p>
+  <div class="site-description motion-element" itemprop="description">没有生而知之，只有学而知之</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/mendax92" title="GitHub &rarr; https://github.com/mendax92" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:mendax92@163.com" title="E-Mail &rarr; mailto:mendax92@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通知渠道创建流程"><span class="nav-number">2.</span> <span class="nav-text">通知渠道创建流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通知渠道NotificationChannel的三个参数"><span class="nav-number">2.1.</span> <span class="nav-text">通知渠道NotificationChannel的三个参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通知渠道创建-如果通知类型比较少的话，可以省略渠道组的创建和设置组ID的流程"><span class="nav-number">2.2.</span> <span class="nav-text">通知渠道创建(如果通知类型比较少的话，可以省略渠道组的创建和设置组ID的流程)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理通知渠道"><span class="nav-number">3.</span> <span class="nav-text">管理通知渠道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除渠道"><span class="nav-number">3.1.</span> <span class="nav-text">删除渠道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除渠道组"><span class="nav-number">3.2.</span> <span class="nav-text">删除渠道组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充"><span class="nav-number">3.3.</span> <span class="nav-text">补充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完整代码"><span class="nav-number">4.</span> <span class="nav-text">完整代码</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+		
+	</aside></div>
+  
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </main></div>
+    
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-fa-heartbeat"></i>
+  </span>
+  
+
+  
+</div>
+
+
+
+<!-- 新增访客统计代码 -->
+<div class="busuanzi-count">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      访问用户： <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人
+    </span>
+    <div class="powered-by"></div>
+    <span class="site-uv">
+      <i class="fa fa-eye"></i>
+      访问次数： <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次
+    </span>
+</div>
+<!-- 新增访客统计代码 END-->
+
+<!-- 在网页底部添加网站运行时间 -->
+<div id="days"></div>
+<script>
+function show_date_time(){
+    window.setTimeout("show_date_time()", 1000);
+    BirthDay=new Date("04/17/2018 15:13:14");//修改为自己的blog建站时间
+    today=new Date();
+    timeold=(today.getTime()-BirthDay.getTime());
+    sectimeold=timeold/1000
+    secondsold=Math.floor(sectimeold);
+    msPerDay=24*60*60*1000
+    e_daysold=timeold/msPerDay
+    daysold=Math.floor(e_daysold);
+    e_hrsold=(e_daysold-daysold)*24;
+    hrsold=setzero(Math.floor(e_hrsold));
+    e_minsold=(e_hrsold-hrsold)*60;
+    minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+    seconds=setzero(Math.floor((e_minsold-minsold)*60));
+    document.getElementById('days').innerHTML="本站已安全运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+    if (i<10)
+    {i="0" + i};
+    return i;
+}
+show_date_time();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.2.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'tHKvHpEuLq9XP69m8qBhChfh-gzGzoHsz',
+    appKey: 'bxgLAuhLtGY2kbm0xO5y80s0',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/js/src/hexo-next-bottomheart.js"></script>
+	<link rel="stylesheet" href="/dist/APlayer.min.css">
+	<div id="aplayer"></div>
+	<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+	<script type="text/javascript" src="/dist/music.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
