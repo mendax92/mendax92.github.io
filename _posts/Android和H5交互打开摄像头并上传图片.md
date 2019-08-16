@@ -47,14 +47,11 @@ tags:
                 uploadPicture();
                 return true;
             }
-
-
             //For Android  >= 4.1
             public void openFileChooser(ValueCallback<Uri> valueCallback, String acceptType, String capture) {
                 uploadMessage = valueCallback;
                 uploadPicture();
             }
-
         });
         String onlineUrl = "https://xxx.com";
         mWebView.loadUrl(onlineUrl);
@@ -301,7 +298,7 @@ public class WebActivity extends AppCompatActivity implements View.OnClickListen
         builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
             public void onCancel(DialogInterface dialog) {
-                //一定要返回null,否则<input type='file'>
+				//一定要返回null,否则&lt;input file &gt;就是没有反应
                 if (uploadMessage != null) {
                     uploadMessage.onReceiveValue(null);
                     uploadMessage = null;
