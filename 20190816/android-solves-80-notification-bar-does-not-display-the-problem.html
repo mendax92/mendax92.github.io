@@ -133,10 +133,12 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 <meta property="og:site_name" content="Mendax&#39;s Blog">
 <meta property="og:description" content="前言开会时领导说更新按钮点击没有反应，后面根据log日志“NotificationService: No Channel found for pkg=xxx.xxx.xxx”查到原因是因为 按钮点击之后本应在通知栏下载的通知没有显示，android 8.0加入了通知渠道，感觉加入通知渠道这个东西之后体验确实好些，打比方APP 中有多种推送通知，-打折通知，-APP更新通知，-IM聊天通知.我可以在">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-16T09:55:05.336Z">
+<meta property="og:image" content="http://blog.simcom.ltd/20190816/android-solves-80-notification-bar-does-not-display-the-problem/2019-08-16.png">
+<meta property="og:updated_time" content="2019-08-16T09:59:46.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android解决8.0通知栏不显示问题">
 <meta name="twitter:description" content="前言开会时领导说更新按钮点击没有反应，后面根据log日志“NotificationService: No Channel found for pkg=xxx.xxx.xxx”查到原因是因为 按钮点击之后本应在通知栏下载的通知没有显示，android 8.0加入了通知渠道，感觉加入通知渠道这个东西之后体验确实好些，打比方APP 中有多种推送通知，-打折通知，-APP更新通知，-IM聊天通知.我可以在">
+<meta name="twitter:image" content="http://blog.simcom.ltd/20190816/android-solves-80-notification-bar-does-not-display-the-problem/2019-08-16.png">
 
 
 
@@ -414,7 +416,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
                 
               
 
-              <time title="创建时间：2019-08-16 12:02:28 / 修改时间：17:55:05" itemprop="dateCreated datePublished" datetime="2019-08-16T12:02:28+08:00">2019-08-16</time>
+              <time title="创建时间：2019-08-16 12:02:28 / 修改时间：17:59:46" itemprop="dateCreated datePublished" datetime="2019-08-16T12:02:28+08:00">2019-08-16</time>
             </span>
           
 
@@ -489,7 +491,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 </li>
 <li><p>channelName：通知渠道的名称，这个是用户可见的，开发者需要认真规划的命名</p>
 </li>
-<li><p>importance：通知渠道的重要等级，有一下几个等级，不过这个用户都是可以手动修改的<br><br>  ![通知渠道的重要等级](android-solves-80-notification-bar-does-not-display-the-problem/2019-08-16 17.png)</p>
+<li><p>importance：通知渠道的重要等级，有一下几个等级，不过这个用户都是可以手动修改的<br><br>  <img src="android-solves-80-notification-bar-does-not-display-the-problem/2019-08-16.png" alt="通知渠道的重要等级"></p>
 <h3 id="通知渠道创建-如果通知类型比较少的话，可以省略渠道组的创建和设置组ID的流程"><a href="#通知渠道创建-如果通知类型比较少的话，可以省略渠道组的创建和设置组ID的流程" class="headerlink" title="通知渠道创建(如果通知类型比较少的话，可以省略渠道组的创建和设置组ID的流程)"></a>通知渠道创建(如果通知类型比较少的话，可以省略渠道组的创建和设置组ID的流程)</h3><pre><code>private final String GROUP_ID = "my_group_01";
 private final int NOTIFICATION_ID = 1;
 private final String CHANNEL_NAME = "APP更新";

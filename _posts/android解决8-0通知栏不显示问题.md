@@ -15,7 +15,7 @@ tags:
 - channelId：通知渠道的ID 可以是任意的字符串，全局唯一就可以
 - channelName：通知渠道的名称，这个是用户可见的，开发者需要认真规划的命名
 - importance：通知渠道的重要等级，有一下几个等级，不过这个用户都是可以手动修改的</br>
-	![通知渠道的重要等级](android-solves-80-notification-bar-does-not-display-the-problem/2019-08-16 17.png)
+	![通知渠道的重要等级](android-solves-80-notification-bar-does-not-display-the-problem/2019-08-16.png)
 ### 通知渠道创建(如果通知类型比较少的话，可以省略渠道组的创建和设置组ID的流程)
 <pre><code>private final String GROUP_ID = "my_group_01";
 private final int NOTIFICATION_ID = 1;
