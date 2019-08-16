@@ -132,11 +132,7 @@ tags:
     }
 </pre></code>
 ## 完整代码
-<pre><code>/**
- * webview通用加载类
- * 加载进度条显示
- * 上传图片的支持
- */
+<pre><code>// webview通用加载类
 public class WebActivity extends AppCompatActivity implements View.OnClickListener {
     Context mContext;
     private static final int REQUEST_CODE_ALBUM = 0x01;
@@ -150,7 +146,6 @@ public class WebActivity extends AppCompatActivity implements View.OnClickListen
     private String mCurrentPhotoPath;
     private String mLastPhothPath;
     private Thread mThread;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

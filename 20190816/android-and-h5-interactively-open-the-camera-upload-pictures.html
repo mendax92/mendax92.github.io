@@ -133,7 +133,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 <meta property="og:site_name" content="Mendax&#39;s Blog">
 <meta property="og:description" content="前言最近一个需求是，原生APP打开H5页面，然后打开摄像头并且上传图片，通过浏览器查看到H5那边的按钮标签是“&amp;lt;input type=”file” id=”fileselect” accept=”image/*” name=”fileselect” capture=”camera” style=”width: 1440px; height: 272px; top: 0px;”&amp;gt;”以下是">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-16T10:46:24.987Z">
+<meta property="og:updated_time" content="2019-08-16T10:47:57.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android和H5交互打开摄像头并上传图片">
 <meta name="twitter:description" content="前言最近一个需求是，原生APP打开H5页面，然后打开摄像头并且上传图片，通过浏览器查看到H5那边的按钮标签是“&amp;lt;input type=”file” id=”fileselect” accept=”image/*” name=”fileselect” capture=”camera” style=”width: 1440px; height: 272px; top: 0px;”&amp;gt;”以下是">
@@ -414,7 +414,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
                 
               
 
-              <time title="创建时间：2019-08-16 18:09:48 / 修改时间：18:46:24" itemprop="dateCreated datePublished" datetime="2019-08-16T18:09:48+08:00">2019-08-16</time>
+              <time title="创建时间：2019-08-16 18:09:48 / 修改时间：18:47:57" itemprop="dateCreated datePublished" datetime="2019-08-16T18:09:48+08:00">2019-08-16</time>
             </span>
           
 
@@ -601,11 +601,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
       }
   }
 </code></pre>
-<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><pre><code>/**
-* webview通用加载类
-* 加载进度条显示
-* 上传图片的支持
-*/
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><pre><code>// webview通用加载类
 public class WebActivity extends AppCompatActivity implements View.OnClickListener {
   Context mContext;
   private static final int REQUEST_CODE_ALBUM = 0x01;
@@ -619,7 +615,6 @@ public class WebActivity extends AppCompatActivity implements View.OnClickListen
   private String mCurrentPhotoPath;
   private String mLastPhothPath;
   private Thread mThread;
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
