@@ -151,7 +151,6 @@ public class WebActivity extends AppCompatActivity implements View.OnClickListen
     private String mLastPhothPath;
     private Thread mThread;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
