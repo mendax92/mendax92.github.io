@@ -150,8 +150,6 @@ notificationManager.createNotificationChannel(channel2);
         filter.addAction(BROADCAST_ACTION_CLICK);
         registerReceiver(myBroadcastReceiver, filter);
     }
-
-
     /**
      * 更新通知界面的按钮的广播
      */
@@ -368,7 +366,5 @@ notificationManager.createNotificationChannel(channel2);
             unregisterReceiver(myBroadcastReceiver);
         }
         super.onDestroy();
-    }
-
-}
+    }}
 </pre></code>
