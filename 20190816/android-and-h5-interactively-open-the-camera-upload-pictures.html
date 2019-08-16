@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+.pace .pace-progress {
+background: #1E92FB; /*进度条颜色*/
+height: 3px;
+}
+.pace .pace-progress-inner {
+box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+}
+.pace .pace-activity {
+border-top-color: #1E92FB;    /*上边框颜色*/
+border-left-color: #1E92FB;    /*左边框颜色*/
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"always","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    search: {
+      root: '/',
+      path: 'search.xml'
+    },
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="前言最近一个需求是，原生APP打开H5页面，然后打开摄像头并且上传图片，通过浏览器查看到H5那边的按钮标签是“&amp;lt;input type=”file” id=”fileselect” accept=”image/*” name=”fileselect” capture=”camera” style=”width: 1440px; height: 272px; top: 0px;”&amp;gt;”以下是">
+<meta name="keywords" content="Android,H5交互">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android和H5交互打开摄像头并上传图片">
+<meta property="og:url" content="http://blog.simcom.ltd/20190816/android-and-h5-interactively-open-the-camera-upload-pictures.html">
+<meta property="og:site_name" content="Mendax&#39;s Blog">
+<meta property="og:description" content="前言最近一个需求是，原生APP打开H5页面，然后打开摄像头并且上传图片，通过浏览器查看到H5那边的按钮标签是“&amp;lt;input type=”file” id=”fileselect” accept=”image/*” name=”fileselect” capture=”camera” style=”width: 1440px; height: 272px; top: 0px;”&amp;gt;”以下是">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-16T10:41:17.464Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android和H5交互打开摄像头并上传图片">
+<meta name="twitter:description" content="前言最近一个需求是，原生APP打开H5页面，然后打开摄像头并且上传图片，通过浏览器查看到H5那边的按钮标签是“&amp;lt;input type=”file” id=”fileselect” accept=”image/*” name=”fileselect” capture=”camera” style=”width: 1440px; height: 272px; top: 0px;”&amp;gt;”以下是">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://blog.simcom.ltd/20190816/android-and-h5-interactively-open-the-camera-upload-pictures">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>Android和H5交互打开摄像头并上传图片 | Mendax's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Mendax's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-question">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/question/" rel="section"><i class="menu-item-icon fa fa-fw fa-question"></i> <br>每日一问</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="javascript:;" class="popup-trigger">
+          
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.simcom.ltd/20190816/android-and-h5-interactively-open-the-camera-upload-pictures.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mendax">
+      <meta itemprop="description" content="没有生而知之，只有学而知之">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mendax's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android和H5交互打开摄像头并上传图片
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-16 18:09:48 / 修改时间：18:41:17" itemprop="dateCreated datePublished" datetime="2019-08-16T18:09:48+08:00">2019-08-16</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          
+            
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="fa fa-comment-o"></i>
+    </span>
+    
+      <span class="post-meta-item-text">评论数：</span>
+    
+  
+    <a href="/20190816/android-and-h5-interactively-open-the-camera-upload-pictures.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/20190816/android-and-h5-interactively-open-the-camera-upload-pictures.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近一个需求是，原生APP打开H5页面，然后打开摄像头并且上传图片，通过浏览器查看到H5那边的按钮标签是“&lt;input type=”file” id=”fileselect” accept=”image/*” name=”fileselect” capture=”camera” style=”width: 1440px; height: 272px; top: 0px;”&gt;”<br><br>以下是解决方案</p>
+<a id="more"></a>
+<h2 id="思路流程"><a href="#思路流程" class="headerlink" title="思路流程"></a>思路流程</h2><ul>
+<li>打开webview对js的支持(mWebView.getSettings().setJavaScriptEnabled(true))</li>
+<li>WebView.setWebChromeClient监听(setWebChromeClient监听:辅助WebView处理JavaScript的对话框，网站图标，网站title，加载进度等)</li>
+<li>获取相机权限并打开相机</li>
+<li>获取拍摄成功的回调并上传文件<h2 id="详细流程"><a href="#详细流程" class="headerlink" title="详细流程"></a>详细流程</h2><h3 id="初始化webview"><a href="#初始化webview" class="headerlink" title="初始化webview"></a>初始化webview</h3><pre><code>private void initWebView() {
+      mWebView.getSettings().setJavaScriptEnabled(true);
+      mWebView.getSettings().setDomStorageEnabled(true);
+      mWebView.setWebViewClient(new WebViewClient() {
+          @Override
+          public void onPageFinished(WebView view, String url) {
+              super.onPageFinished(view, url);
+              tvClose.setVisibility(mWebView.canGoBack() ? View.VISIBLE : View.GONE);
+          }
+          @Override
+          public void onPageStarted(WebView view, String url, Bitmap favicon) {
+              super.onPageStarted(view, url, favicon);
+          }
+      });
+      mWebView.setWebChromeClient(new WebChromeClient() {
+          @Override
+          public void onProgressChanged(WebView view, int newProgress) {
+              super.onProgressChanged(view, newProgress);
+              mProgressBar.setProgress(newProgress);
+              if (newProgress == 100) {
+                  mProgressBar.setVisibility(View.GONE);
+              }
+          }
+          //For Android  >= 5.0
+          @Override
+          public boolean onShowFileChooser(WebView webView, ValueCallback<uri[]> filePathCallback, FileChooserParams fileChooserParams) {
+              uploadMessageAboveL = filePathCallback;
+              uploadPicture();
+              return true;
+          }
+
+
+</uri[]></code></pre></li>
+</ul>
+<pre><code>        //For Android  &gt;= 4.1
+        public void openFileChooser(ValueCallback&lt;Uri&gt; valueCallback, String acceptType, String capture) {
+            uploadMessage = valueCallback;
+            uploadPicture();
+        }
+
+    });
+    String onlineUrl = &quot;https://xxx.com&quot;;
+    mWebView.loadUrl(onlineUrl);
+}</code></pre><p></p>
+<h3 id="打开摄像头"><a href="#打开摄像头" class="headerlink" title="打开摄像头"></a>打开摄像头</h3><pre><code>/**
+     * 拍照
+     */
+    private void takePhoto() {
+        StringBuilder fileName = new StringBuilder();
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        fileName.append(UUID.randomUUID()).append("_upload.png");
+        File tempFile = new File(mContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES), fileName.toString());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            Uri uri = FileProvider.getUriForFile(mContext, BuildConfig.APPLICATION_ID + ".fileProvider", tempFile);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+        } else {
+            Uri uri = Uri.fromFile(tempFile);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+        }
+        mCurrentPhotoPath = tempFile.getAbsolutePath();
+        startActivityForResult(intent, REQUEST_CODE_CAMERA);
+    }
+</code></pre>
+<h3 id="获取拍摄成功的回调并上传文件"><a href="#获取拍摄成功的回调并上传文件" class="headerlink" title="获取拍摄成功的回调并上传文件"></a>获取拍摄成功的回调并上传文件</h3><pre><code>@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_ALBUM || requestCode == REQUEST_CODE_CAMERA) {
+            if (uploadMessage == null && uploadMessageAboveL == null) {
+                return;
+            }
+            //取消拍照或者图片选择时
+            if (resultCode != RESULT_OK) {
+                //一定要返回null,否则&lt;input file &gt;就是没有反应
+                if (uploadMessage != null) {
+                    uploadMessage.onReceiveValue(null);
+                    uploadMessage = null;
+                }
+                if (uploadMessageAboveL != null) {
+                    uploadMessageAboveL.onReceiveValue(null);
+                    uploadMessageAboveL = null;
+                }
+            }
+            //拍照成功和选取照片时
+            if (resultCode == RESULT_OK) {
+                Uri imageUri = null;
+                switch (requestCode) {
+                    case REQUEST_CODE_ALBUM:
+                        if (data != null) {
+                            imageUri = data.getData();
+                        }
+                        break;
+                    case REQUEST_CODE_CAMERA:
+                        if (!TextUtils.isEmpty(mCurrentPhotoPath)) {
+                            File file = new File(mCurrentPhotoPath);
+                            Uri localUri = Uri.fromFile(file);
+                            Intent localIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, localUri);
+                            sendBroadcast(localIntent);
+                            imageUri = Uri.fromFile(file);
+                            mLastPhothPath = mCurrentPhotoPath;
+                        }
+                        break;
+                }
+                //上传文件
+                if (uploadMessage != null) {
+                    uploadMessage.onReceiveValue(imageUri);
+                    uploadMessage = null;
+                }
+                if (uploadMessageAboveL != null) {
+                    uploadMessageAboveL.onReceiveValue(new Uri[]{imageUri});
+                    uploadMessageAboveL = null;
+                }
+            }
+        }
+    }
+</code></pre>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><pre><code>/**
+ * webview通用加载类
+ * 加载进度条显示
+ * 上传图片的支持
+ */
+public class WebActivity extends AppCompatActivity implements View.OnClickListener {
+    Context mContext;
+    private static final int REQUEST_CODE_ALBUM = 0x01;
+    private static final int REQUEST_CODE_CAMERA = 0x02;
+    private static final int REQUEST_CODE_PERMISSION_CAMERA = 0x03;
+    WebView mWebView;
+    ProgressBar mProgressBar;
+    TextView tvClose;
+    private ValueCallback<uri> uploadMessage;
+    private ValueCallback<uri[]> uploadMessageAboveL;
+    private String mCurrentPhotoPath;
+    private String mLastPhothPath;
+    private Thread mThread;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_web);
+        mContext = this;
+        //绑定控件ID
+        initView();
+        //进度条初始化
+        initProgressBar();
+        //webview初始化
+        initWebView();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mThread = null;
+        mHandler = null;
+    }
+
+    private void initView() {
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
+        mWebView = (WebView) findViewById(R.id.webview);
+        tvClose = (TextView) findViewById(R.id.tv_close);
+        TextView tvBack = (TextView) findViewById(R.id.tv_back);
+        tvClose.setOnClickListener(this);
+        tvBack.setOnClickListener(this);
+    }
+
+    private void initProgressBar() {
+        mProgressBar.setMax(100);
+    }
+
+    private void initWebView() {
+        mWebView.getSettings().setJavaScriptEnabled(true);
+        mWebView.getSettings().setDomStorageEnabled(true);
+        mWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                tvClose.setVisibility(mWebView.canGoBack() ? View.VISIBLE : View.GONE);
+            }
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+            }
+        });
+        mWebView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                super.onProgressChanged(view, newProgress);
+                mProgressBar.setProgress(newProgress);
+                if (newProgress == 100) {
+                    mProgressBar.setVisibility(View.GONE);
+                }
+
+            }
+            //For Android  >= 5.0
+            @Override
+            public boolean onShowFileChooser(WebView webView, ValueCallback<uri[]> filePathCallback, FileChooserParams fileChooserParams) {
+                uploadMessageAboveL = filePathCallback;
+                uploadPicture();
+                return true;
+            }
+            //For Android  >= 4.1
+            public void openFileChooser(ValueCallback<uri> valueCallback, String acceptType, String capture) {
+                uploadMessage = valueCallback;
+                uploadPicture();
+            }
+
+        });
+         String onlineUrl = "https://xxx.com";
+        mWebView.loadUrl(onlineUrl);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tv_back:
+                onBackPressed();
+                break;
+            case R.id.tv_close:
+                finish();
+                break;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mWebView != null && mWebView.canGoBack()) {
+            mWebView.goBack();
+        } else {
+            finish();
+        }
+    }
+    Handler  mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            takePhoto();
+        }
+    };
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (grantResults == null && grantResults.length == 0) {
+            return;
+        }
+
+        if (requestCode == REQUEST_CODE_PERMISSION_CAMERA) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                takePhoto();
+            } else {
+                // Permission Denied
+                new AlertDialog.Builder(mContext)
+                        .setTitle("无法拍照")
+                        .setMessage("您未授予拍照权限")
+                        .setNegativeButton("取消", null)
+                        .setPositiveButton("去设置", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent localIntent = new Intent();
+                                localIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                localIntent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
+                                localIntent.setData(Uri.fromParts("package", getPackageName(), null));
+                                startActivity(localIntent);
+                            }
+                        }).create().show();
+            }
+
+        }
+
+    }
+
+    /**
+     * 选择相机或者相册
+     */
+    public void uploadPicture() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(WebActivity.this);
+        builder.setTitle("请选择图片上传方式");
+        //取消对话框
+        builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                //一定要返回null,否则<input type="file">
+                if (uploadMessage != null) {
+                    uploadMessage.onReceiveValue(null);
+                    uploadMessage = null;
+                }
+                if (uploadMessageAboveL != null) {
+                    uploadMessageAboveL.onReceiveValue(null);
+                    uploadMessageAboveL = null;
+                }
+            }
+        });
+        builder.setPositiveButton("相机", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(!TextUtils.isEmpty(mLastPhothPath)){
+                    //上一张拍照的图片删除
+                    mThread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            File file = new File(mLastPhothPath);
+                            if(file!= null){
+                                file.delete();
+                            }
+                            mHandler.sendEmptyMessage(1);
+                        }
+                    });
+                    mThread.start();
+                }else{
+                    //请求拍照权限
+                    if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                        takePhoto();
+                    } else {
+                        ActivityCompat.requestPermissions(WebActivity.this, new String[]{Manifest.permission.CAMERA}, REQUEST_CODE_PERMISSION_CAMERA);
+                    }
+                }
+            }
+        });
+        builder.setNegativeButton("相册", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                chooseAlbumPic();
+            }
+        });
+        builder.create().show();
+    }
+
+    /**
+     * 拍照
+     */
+    private void takePhoto() {
+        StringBuilder fileName = new StringBuilder();
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        fileName.append(UUID.randomUUID()).append("_upload.png");
+        File tempFile = new File(mContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES), fileName.toString());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            Uri uri = FileProvider.getUriForFile(mContext, BuildConfig.APPLICATION_ID + ".fileProvider", tempFile);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+        } else {
+            Uri uri = Uri.fromFile(tempFile);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+        }
+        mCurrentPhotoPath = tempFile.getAbsolutePath();
+        startActivityForResult(intent, REQUEST_CODE_CAMERA);
+    }
+
+    /**
+     * 选择相册照片
+     */
+    private void chooseAlbumPic() {
+        Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+        i.addCategory(Intent.CATEGORY_OPENABLE);
+        i.setType("image/*");
+        startActivityForResult(Intent.createChooser(i, "Image Chooser"), REQUEST_CODE_ALBUM);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_ALBUM || requestCode == REQUEST_CODE_CAMERA) {
+            if (uploadMessage == null && uploadMessageAboveL == null) {
+                return;
+            }
+            //取消拍照或者图片选择时
+            if (resultCode != RESULT_OK) {
+                 //一定要返回null,否则&lt;input file &gt;就是没有反应
+                if (uploadMessage != null) {
+                    uploadMessage.onReceiveValue(null);
+                    uploadMessage = null;
+                }
+                if (uploadMessageAboveL != null) {
+                    uploadMessageAboveL.onReceiveValue(null);
+                    uploadMessageAboveL = null;
+                }
+            }
+            //拍照成功和选取照片时
+            if (resultCode == RESULT_OK) {
+                Uri imageUri = null;
+                switch (requestCode) {
+                    case REQUEST_CODE_ALBUM:
+                        if (data != null) {
+                            imageUri = data.getData();
+                        }
+                        break;
+                    case REQUEST_CODE_CAMERA:
+                        if (!TextUtils.isEmpty(mCurrentPhotoPath)) {
+                            File file = new File(mCurrentPhotoPath);
+                            Uri localUri = Uri.fromFile(file);
+                            Intent localIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, localUri);
+                            sendBroadcast(localIntent);
+                            imageUri = Uri.fromFile(file);
+                            mLastPhothPath = mCurrentPhotoPath;
+                        }
+                        break;
+                }
+                //上传文件
+                if (uploadMessage != null) {
+                    uploadMessage.onReceiveValue(imageUri);
+                    uploadMessage = null;
+                }
+                if (uploadMessageAboveL != null) {
+                    uploadMessageAboveL.onReceiveValue(new Uri[]{imageUri});
+                    uploadMessageAboveL = null;
+                }
+            }
+        }
+    }
+}
+</uri></uri[]></uri[]></uri></code></pre>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/H5交互/" rel="tag"># H5交互</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/20190816/android-solves-80-notification-bar-does-not-display-the-problem.html" rel="next" title="android解决8.0通知栏不显示问题">
+                <i class="fa fa-chevron-left"></i> android解决8.0通知栏不显示问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+  
+    
+    <div class="comments" id="comments"></div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="Mendax">
+  
+  <p class="site-author-name" itemprop="name">Mendax</p>
+  <div class="site-description motion-element" itemprop="description">没有生而知之，只有学而知之</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/mendax92" title="GitHub &rarr; https://github.com/mendax92" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:mendax92@163.com" title="E-Mail &rarr; mailto:mendax92@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路流程"><span class="nav-number">2.</span> <span class="nav-text">思路流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细流程"><span class="nav-number">3.</span> <span class="nav-text">详细流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化webview"><span class="nav-number">3.1.</span> <span class="nav-text">初始化webview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开摄像头"><span class="nav-number">3.2.</span> <span class="nav-text">打开摄像头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取拍摄成功的回调并上传文件"><span class="nav-number">3.3.</span> <span class="nav-text">获取拍摄成功的回调并上传文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完整代码"><span class="nav-number">4.</span> <span class="nav-text">完整代码</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+		
+	</aside></div>
+  
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </main></div>
+    
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-fa-heartbeat"></i>
+  </span>
+  
+
+  
+</div>
+
+
+
+<!-- 新增访客统计代码 -->
+<div class="busuanzi-count">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      访问用户： <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人
+    </span>
+    <div class="powered-by"></div>
+    <span class="site-uv">
+      <i class="fa fa-eye"></i>
+      访问次数： <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次
+    </span>
+</div>
+<!-- 新增访客统计代码 END-->
+
+<!-- 在网页底部添加网站运行时间 -->
+<div id="days"></div>
+<script>
+function show_date_time(){
+    window.setTimeout("show_date_time()", 1000);
+    BirthDay=new Date("04/17/2018 15:13:14");//修改为自己的blog建站时间
+    today=new Date();
+    timeold=(today.getTime()-BirthDay.getTime());
+    sectimeold=timeold/1000
+    secondsold=Math.floor(sectimeold);
+    msPerDay=24*60*60*1000
+    e_daysold=timeold/msPerDay
+    daysold=Math.floor(e_daysold);
+    e_hrsold=(e_daysold-daysold)*24;
+    hrsold=setzero(Math.floor(e_hrsold));
+    e_minsold=(e_hrsold-hrsold)*60;
+    minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+    seconds=setzero(Math.floor((e_minsold-minsold)*60));
+    document.getElementById('days').innerHTML="本站已安全运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+    if (i<10)
+    {i="0" + i};
+    return i;
+}
+show_date_time();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.2.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'tHKvHpEuLq9XP69m8qBhChfh-gzGzoHsz',
+    appKey: 'bxgLAuhLtGY2kbm0xO5y80s0',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+  
+  <script type="text/javascript" src="/js/src/hexo-next-bottomheart.js"></script>
+	<link rel="stylesheet" href="/dist/APlayer.min.css">
+	<div id="aplayer"></div>
+	<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+	<script type="text/javascript" src="/dist/music.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
