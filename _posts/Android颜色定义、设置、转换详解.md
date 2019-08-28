@@ -104,3 +104,8 @@ public static final int TRANSPARENT = 0;</pre></code>
         String hb = Integer.toHexString(blue);
         System.out.println("#"+hr + hg + hb);      
 	}</pre></code>
+
+## 工具网站
+[在线拾色器](https://www.w3cschool.cn/tools/index?name=cpicker)</br>
+[在线RGB颜色值与十六进制颜色码转换工具](https://www.sioe.cn/yingyong/yanse-rgb-16/)</br>
+[在线图片取色器](http://www.jiniannet.com/page/allcolor)</br>
