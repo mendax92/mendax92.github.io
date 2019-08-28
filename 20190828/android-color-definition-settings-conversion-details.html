@@ -126,14 +126,14 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 </script>
 
   <meta name="description" content="前言Android中的颜色值通常遵循RGB/ARGB标准，使用时通常以“ # ”字符开头的8位16进制表示。“A”代表透明度（Alpha）“R”代表红色(Red)“G”代表绿色(Green)“B”代表蓝色(Blue)取值范围为0 ~ 255（即16进制的0x00 ~ 0xff）。A 从0x00到0xff表示从透明到不透明，RGB 从0x00到0xff表示颜色从浅到深。当RGB全取最小值(0或0x0">
-<meta name="keywords" content="Android,工具">
+<meta name="keywords" content="工具,Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android颜色定义、设置、转换详解">
 <meta property="og:url" content="http://blog.simcom.ltd/20190828/android-color-definition-settings-conversion-details.html">
 <meta property="og:site_name" content="Mendax&#39;s Blog">
 <meta property="og:description" content="前言Android中的颜色值通常遵循RGB/ARGB标准，使用时通常以“ # ”字符开头的8位16进制表示。“A”代表透明度（Alpha）“R”代表红色(Red)“G”代表绿色(Green)“B”代表蓝色(Blue)取值范围为0 ~ 255（即16进制的0x00 ~ 0xff）。A 从0x00到0xff表示从透明到不透明，RGB 从0x00到0xff表示颜色从浅到深。当RGB全取最小值(0或0x0">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-28T01:24:40.082Z">
+<meta property="og:updated_time" content="2019-08-28T01:46:40.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android颜色定义、设置、转换详解">
 <meta name="twitter:description" content="前言Android中的颜色值通常遵循RGB/ARGB标准，使用时通常以“ # ”字符开头的8位16进制表示。“A”代表透明度（Alpha）“R”代表红色(Red)“G”代表绿色(Green)“B”代表蓝色(Blue)取值范围为0 ~ 255（即16进制的0x00 ~ 0xff）。A 从0x00到0xff表示从透明到不透明，RGB 从0x00到0xff表示颜色从浅到深。当RGB全取最小值(0或0x0">
@@ -414,7 +414,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
                 
               
 
-              <time title="创建时间：2019-08-28 09:16:15 / 修改时间：09:24:40" itemprop="dateCreated datePublished" datetime="2019-08-28T09:16:15+08:00">2019-08-28</time>
+              <time title="创建时间：2019-08-28 09:16:15 / 修改时间：09:46:40" itemprop="dateCreated datePublished" datetime="2019-08-28T09:16:15+08:00">2019-08-28</time>
             </span>
           
 
@@ -481,22 +481,180 @@ border-left-color: #1E92FB;    /*左边框颜色*/
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Android中的颜色值通常遵循RGB/ARGB标准，使用时通常以“ # ”字符开头的8位16进制表示。<br>“A”代表透明度（Alpha）<br>“R”代表红色(Red)<br>“G”代表绿色(Green)<br>“B”代表蓝色(Blue)<br>取值范围为0 ~ 255（即16进制的0x00 ~ 0xff）。<br>A 从0x00到0xff表示从透明到不透明，RGB 从0x00到0xff表示颜色从浅到深。当RGB全取最小值(0或0x000000)时颜色为黑色，全取最大值(255或0xffffff)时颜色为白色</p>
 <a id="more"></a>
-<table>
+<h2 id="透明度对应表"><a href="#透明度对应表" class="headerlink" title="透明度对应表"></a>透明度对应表</h2><table>
 <thead>
 <tr>
-<th>表头</th>
-<th>表头</th>
+<th align="center">透明百分比</th>
+<th align="center">十六进制</th>
+<th align="center">透明度</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>单元格</td>
-<td>单元格</td>
+<td align="center">100%</td>
+<td align="center">FF</td>
+<td align="center">255</td>
 </tr>
 <tr>
-<td>单元格</td>
-<td>单元格</td>
+<td align="center">95%</td>
+<td align="center">F2</td>
+<td align="center">242</td>
+</tr>
+<tr>
+<td align="center">90%</td>
+<td align="center">E6</td>
+<td align="center">230</td>
+</tr>
+<tr>
+<td align="center">85%</td>
+<td align="center">D9</td>
+<td align="center">217</td>
+</tr>
+<tr>
+<td align="center">80%</td>
+<td align="center">CC</td>
+<td align="center">204</td>
+</tr>
+<tr>
+<td align="center">75%</td>
+<td align="center">BF</td>
+<td align="center">191</td>
+</tr>
+<tr>
+<td align="center">70%</td>
+<td align="center">B3</td>
+<td align="center">166</td>
+</tr>
+<tr>
+<td align="center">65%</td>
+<td align="center">A6</td>
+<td align="center">242</td>
+</tr>
+<tr>
+<td align="center">60%</td>
+<td align="center">99</td>
+<td align="center">153</td>
+</tr>
+<tr>
+<td align="center">55%</td>
+<td align="center">8C</td>
+<td align="center">140</td>
+</tr>
+<tr>
+<td align="center">50%</td>
+<td align="center">80</td>
+<td align="center">128</td>
+</tr>
+<tr>
+<td align="center">45%</td>
+<td align="center">73</td>
+<td align="center">115</td>
+</tr>
+<tr>
+<td align="center">40%</td>
+<td align="center">66</td>
+<td align="center">102</td>
+</tr>
+<tr>
+<td align="center">35%</td>
+<td align="center">59</td>
+<td align="center">89</td>
+</tr>
+<tr>
+<td align="center">30%</td>
+<td align="center">4D</td>
+<td align="center">77</td>
+</tr>
+<tr>
+<td align="center">25%</td>
+<td align="center">40</td>
+<td align="center">64</td>
+</tr>
+<tr>
+<td align="center">20%</td>
+<td align="center">33</td>
+<td align="center">51</td>
+</tr>
+<tr>
+<td align="center">15%</td>
+<td align="center">26</td>
+<td align="center">38</td>
+</tr>
+<tr>
+<td align="center">10%</td>
+<td align="center">1A</td>
+<td align="center">26</td>
+</tr>
+<tr>
+<td align="center">5%</td>
+<td align="center">0D</td>
+<td align="center">13</td>
+</tr>
+<tr>
+<td align="center">0%</td>
+<td align="center">00</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">以颜色值#FF99CC00为例，其中FF是透明度，99是红色值，CC是绿色值，00是蓝色值</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody></table>
+<blockquote>
+<p>全透明：#00000000/(0,0,0,0)<br><br>半透明：#80000000/(128,0,0,0)<br><br>不透明：#FF000000/(255,0,0,0)</p>
+</blockquote>
+<h2 id="颜色的定义"><a href="#颜色的定义" class="headerlink" title="颜色的定义"></a>颜色的定义</h2><ul>
+<li>Android系统封装好的Color类中的常量  <pre><code>public static final int BLACK = 0xFF000000;
+public static final int DKGRAY = 0xFF444444;
+public static final int GRAY = 0xFF888888;
+public static final int LTGRAY = 0xFFCCCCCC;
+public static final int WHITE = 0xFFFFFFFF;
+public static final int RED = 0xFFFF0000;
+public static final int GREEN = 0xFF00FF00;
+public static final int BLUE = 0xFF0000FF;
+public static final int YELLOW = 0xFFFFFF00;
+public static final int CYAN = 0xFF00FFFF;
+public static final int MAGENTA = 0xFFFF00FF;
+public static final int TRANSPARENT = 0;</code></pre></li>
+<li>使用0x开头的颜色值<pre><code>&lt;pre&gt;&lt;code&gt;int color = 0xff00ff00;&lt;/pre&gt;&lt;/code&gt;</code></pre></li>
+<li>使用Color类的静态方法argb创建颜色<pre><code>&lt;pre&gt;&lt;code&gt;int color = Color.argb(127, 255, 0, 255);&lt;/pre&gt;&lt;/code&gt;</code></pre></li>
+<li>把16进制颜色值转换为int类型数值<pre><code>&lt;pre&gt;&lt;code&gt;int color = Color.parseColor(&quot;#00CCFF&quot;);&lt;/pre&gt;&lt;/code&gt;</code></pre></li>
+<li>使用xml资源文件来表示颜色 (…/res/values/colors.xml)<pre><code>&lt;pre&gt;&lt;code&gt;&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;resources&gt; </code></pre>  <color name="colorPrimary">#3F51B5</color><br>  <color name="colorPrimaryDark">#303F9F</color><br>  <color name="colorAccent">#FF4081</color><br><h2 id="颜色的设置"><a href="#颜色的设置" class="headerlink" title="颜色的设置"></a>颜色的设置</h2></li>
+<li>java代码中  <pre><code>textView.setTextColor(Color.RED);
+  textView.setTextColor(0xffff0000);
+  textView.setTextColor(Color.argb(127, 255, 0, 255));
+  textView.setTextColor(Color.parseColor("#00CCFF"))
+  textView.setTextColor(getResources().getColor(R.color.colorPrimary));//已过时
+  textView.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));//替换方法
+  </code></pre></li>
+<li>xml布局  <pre><code> android:textColor="@color/text_color_white"</code></pre>
+<h2 id="颜色的转换"><a href="#颜色的转换" class="headerlink" title="颜色的转换"></a>颜色的转换</h2></li>
+<li>透明度百分比和十六进制对应关系计算方法：  <pre><code>public void toARGB() {
+      System.out.println("透明度 | 十六进制");
+      System.out.println("---- | ----");
+      for (double i = 1; i >= 0; i -= 0.01) {
+          i = Math.round(i * 100) / 100.0d;
+          int alpha = (int) Math.round(i * 255);
+          String hex = Integer.toHexString(alpha).toUpperCase();
+          if (hex.length() == 1) hex = "0" + hex;
+          int percent = (int) (i * 100);
+          System.out.println(String.format("%d%% | %s", percent, hex));
+      }
+  }</code></pre></li>
+<li>16进制转GRB颜色值方法：  <pre><code> public static void toRGB(String hex) {
+      int color = Integer.parseInt(hex.replace("#", ""), 16);
+      int red = (color & 0xff0000) >> 16;
+      int green = (color & 0x00ff00) >> 8;
+      int blue = (color & 0x0000ff);     
+      System.out.println("red="+red+"--green="+green+"--blue="+blue);  
+  }</code></pre></li>
+<li>GRB转16进制颜色值方法：  <pre><code>public static void toHex(int red, int green, int blue){
+      String hr = Integer.toHexString(red);
+      String hg = Integer.toHexString(green);
+      String hb = Integer.toHexString(blue);
+      System.out.println("#"+hr + hg + hb);      
+  }</code></pre></li>
+</ul>
 
       
     </div>
@@ -527,9 +685,9 @@ border-left-color: #1E92FB;    /*左边框颜色*/
         
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag"># Android</a>
-          
             <a href="/tags/工具/" rel="tag"># 工具</a>
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
         </div>
       
@@ -742,7 +900,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#透明度对应表"><span class="nav-number">2.</span> <span class="nav-text">透明度对应表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色的定义"><span class="nav-number">3.</span> <span class="nav-text">颜色的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色的设置"><span class="nav-number">4.</span> <span class="nav-text">颜色的设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色的转换"><span class="nav-number">5.</span> <span class="nav-text">颜色的转换</span></a></li></ol></div>
             
 
           </div>
