@@ -133,7 +133,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 <meta property="og:site_name" content="Mendax&#39;s Blog">
 <meta property="og:description" content="前言Android中的颜色值通常遵循RGB/ARGB标准，使用时通常以“ # ”字符开头的8位16进制表示。“A”代表透明度（Alpha）“R”代表红色(Red)“G”代表绿色(Green)“B”代表蓝色(Blue)取值范围为0 ~ 255（即16进制的0x00 ~ 0xff）。A 从0x00到0xff表示从透明到不透明，RGB 从0x00到0xff表示颜色从浅到深。当RGB全取最小值(0或0x0">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-28T02:05:11.562Z">
+<meta property="og:updated_time" content="2019-08-28T02:07:22.393Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android颜色定义、设置、转换详解">
 <meta name="twitter:description" content="前言Android中的颜色值通常遵循RGB/ARGB标准，使用时通常以“ # ”字符开头的8位16进制表示。“A”代表透明度（Alpha）“R”代表红色(Red)“G”代表绿色(Green)“B”代表蓝色(Blue)取值范围为0 ~ 255（即16进制的0x00 ~ 0xff）。A 从0x00到0xff表示从透明到不透明，RGB 从0x00到0xff表示颜色从浅到深。当RGB全取最小值(0或0x0">
@@ -414,7 +414,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
                 
               
 
-              <time title="创建时间：2019-08-28 09:16:15 / 修改时间：10:05:11" itemprop="dateCreated datePublished" datetime="2019-08-28T09:16:15+08:00">2019-08-28</time>
+              <time title="创建时间：2019-08-28 09:16:15 / 修改时间：10:07:22" itemprop="dateCreated datePublished" datetime="2019-08-28T09:16:15+08:00">2019-08-28</time>
             </span>
           
 
@@ -611,16 +611,13 @@ public static final int YELLOW = 0xFFFFFF00;
 public static final int CYAN = 0xFF00FFFF;
 public static final int MAGENTA = 0xFFFF00FF;
 public static final int TRANSPARENT = 0;</code></pre></li>
-<li>使用0x开头的颜色值<br><br>  <code>int color = 0xff00ff00;</code></li>
+<li>使用0x开头的颜色值<br>  <code>int color = 0xff00ff00;</code></li>
 <li>使用Color类的静态方法argb创建颜色<br>  <code>int color = Color.argb(127, 255, 0, 255);</code></li>
 <li>把16进制颜色值转换为int类型数值<br>  <code>int color = Color.parseColor(&quot;#00CCFF&quot;);</code></li>
-<li>使用xml资源文件来表示颜色 (…/res/values/colors.xml)  <pre><code>&lt;?xml version="1.0" encoding="utf-8"?>
+<li>使用xml资源文件来表示颜色 (…/res/values/colors.xml)  <pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
   &lt;resources> 
-  &lt;color name="colorPrimary">#3F51B5 
-  &lt;color name="colorPrimaryDark">#303F9F 
-  &lt;color name="colorAccent">#FF4081
-  &lt;/resources></code></pre>
-<h2 id="颜色的设置"><a href="#颜色的设置" class="headerlink" title="颜色的设置"></a>颜色的设置</h2></li>
+  &lt;color name="colorPrimary">#3F51B5#303F9F#FF4081</code>
+<h2 id="颜色的设置"><a href="#颜色的设置" class="headerlink" title="颜色的设置"></a>颜色的设置</h2></pre></li>
 <li>java代码  <pre><code>textView.setTextColor(Color.RED);
   textView.setTextColor(0xffff0000);
   textView.setTextColor(Color.argb(127, 255, 0, 255));
