@@ -53,18 +53,19 @@ public static final int YELLOW = 0xFFFFFF00;
 public static final int CYAN = 0xFF00FFFF;
 public static final int MAGENTA = 0xFFFF00FF;
 public static final int TRANSPARENT = 0;</pre></code>
-- 使用0x开头的颜色值
-	<pre><code>int color = 0xff00ff00;</pre></code>
+- 使用0x开头的颜色值</br>
+	`int color = 0xff00ff00;`
 - 使用Color类的静态方法argb创建颜色
-	<pre><code>int color = Color.argb(127, 255, 0, 255);</pre></code>
+	`int color = Color.argb(127, 255, 0, 255);`
 - 把16进制颜色值转换为int类型数值
-	<pre><code>int color = Color.parseColor("#00CCFF");</pre></code>
+	`int color = Color.parseColor("#00CCFF");`
 - 使用xml资源文件来表示颜色 (.../res/values/colors.xml)
-	<pre><code><?xml version="1.0" encoding="utf-8"?><resources> 
-	<color name="colorPrimary">#3F51B5</color> 
-	<color name="colorPrimaryDark">#303F9F</color> 
-	<color name="colorAccent">#FF4081</color> 
-	</resources></pre></code>
+	<pre><code>&lt;?xml version="1.0" encoding="utf-8"?>
+	&lt;resources> 
+	&lt;color name="colorPrimary">#3F51B5</color> 
+	&lt;color name="colorPrimaryDark">#303F9F</color> 
+	&lt;color name="colorAccent">#FF4081</color>
+	&lt;/resources></pre></code>
 ## 颜色的设置
 - java代码
 	<pre><code>textView.setTextColor(Color.RED);
