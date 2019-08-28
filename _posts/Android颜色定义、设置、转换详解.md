@@ -34,7 +34,8 @@ A 从0x00到0xff表示从透明到不透明，RGB 从0x00到0xff表示颜色从�
 | 10%  | 1A | 26 |
 | 5%  | 0D | 13 |
 | 0%  | 00 | 0 |
-以颜色值#FF99CC00为例，其中FF是透明度，99是红色值，CC是绿色值，00是蓝色值
+
+>以颜色值#FF99CC00为例，其中FF是透明度，99是红色值，CC是绿色值，00是蓝色值</br>
 >全透明：#00000000/(0,0,0,0)</br>
 >半透明：#80000000/(128,0,0,0)</br>
 >不透明：#FF000000/(255,0,0,0)
@@ -53,26 +54,25 @@ public static final int CYAN = 0xFF00FFFF;
 public static final int MAGENTA = 0xFFFF00FF;
 public static final int TRANSPARENT = 0;</pre></code>
 - 使用0x开头的颜色值
-		<pre><code>int color = 0xff00ff00;</pre></code>
+	<pre><code>int color = 0xff00ff00;</pre></code>
 - 使用Color类的静态方法argb创建颜色
-		<pre><code>int color = Color.argb(127, 255, 0, 255);</pre></code>
+	<pre><code>int color = Color.argb(127, 255, 0, 255);</pre></code>
 - 把16进制颜色值转换为int类型数值
-		<pre><code>int color = Color.parseColor("#00CCFF");</pre></code>
+	<pre><code>int color = Color.parseColor("#00CCFF");</pre></code>
 - 使用xml资源文件来表示颜色 (.../res/values/colors.xml)
-		<pre><code><?xml version="1.0" encoding="utf-8"?><resources> 
+	<pre><code><?xml version="1.0" encoding="utf-8"?><resources> 
 	<color name="colorPrimary">#3F51B5</color> 
 	<color name="colorPrimaryDark">#303F9F</color> 
 	<color name="colorAccent">#FF4081</color> 
-</resources></pre></code>
+	</resources></pre></code>
 ## 颜色的设置
-- java代码中
+- java代码
 	<pre><code>textView.setTextColor(Color.RED);
 	textView.setTextColor(0xffff0000);
 	textView.setTextColor(Color.argb(127, 255, 0, 255));
 	textView.setTextColor(Color.parseColor("#00CCFF"))
 	textView.setTextColor(getResources().getColor(R.color.colorPrimary));//已过时
-	textView.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));//替换方法
-	</pre></code>
+	textView.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));//替换方法</pre></code>
 - xml布局
 	<pre><code> android:textColor="@color/text_color_white"</pre></code>
 ## 颜色的转换
