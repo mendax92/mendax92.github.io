@@ -62,9 +62,9 @@ public static final int TRANSPARENT = 0;</pre></code>
 - 使用xml资源文件来表示颜色 (.../res/values/colors.xml)
 	<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 	&lt;resources> 
-	&lt;color name="colorPrimary">#3F51B5</color&gt;
-	&lt;color name="colorPrimaryDark">#303F9F</color&gt;
-	&lt;color name="colorAccent">#FF4081</color&gt;
+	&lt;color name="colorPrimary">#3F51B5&lt;/color&gt;
+	&lt;color name="colorPrimaryDark">#303F9F&lt;/color&gt;
+	&lt;color name="colorAccent">#FF4081&lt;/color&gt;
 	&lt;/resources&gt;</pre></code>
 ## 颜色的设置
 - java代码
